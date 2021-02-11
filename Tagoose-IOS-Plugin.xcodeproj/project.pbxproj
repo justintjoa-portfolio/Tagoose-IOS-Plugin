@@ -1,0 +1,694 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5277394525D4D2E600F93FEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5277394425D4D2E600F93FEC /* AppDelegate.swift */; };
+		5277394725D4D2E600F93FEC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5277394625D4D2E600F93FEC /* SceneDelegate.swift */; };
+		5277394B25D4D2E700F93FEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5277394A25D4D2E700F93FEC /* Assets.xcassets */; };
+		5277394E25D4D2E700F93FEC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5277394D25D4D2E700F93FEC /* Preview Assets.xcassets */; };
+		5277395125D4D2E700F93FEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5277394F25D4D2E700F93FEC /* LaunchScreen.storyboard */; };
+		5277395C25D4D2E700F93FEC /* Tagoose_IOS_PluginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5277395B25D4D2E700F93FEC /* Tagoose_IOS_PluginTests.swift */; };
+		5277396725D4D2E800F93FEC /* Tagoose_IOS_PluginUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5277396625D4D2E800F93FEC /* Tagoose_IOS_PluginUITests.swift */; };
+		5277398625D4D53F00F93FEC /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5277398525D4D53F00F93FEC /* ScanView.swift */; };
+		5277398B25D4D5A700F93FEC /* ScanRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5277398A25D4D5A700F93FEC /* ScanRepository.swift */; };
+		5277399025D4D5BE00F93FEC /* ScanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5277398F25D4D5BE00F93FEC /* ScanController.swift */; };
+		527739A025D4DA1F00F93FEC /* ScanSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5277399F25D4DA1F00F93FEC /* ScanSceneView.swift */; };
+		527739AA25D5167F00F93FEC /* ScanState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527739A925D5167F00F93FEC /* ScanState.swift */; };
+		527739AF25D5168800F93FEC /* ScanEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527739AE25D5168800F93FEC /* ScanEvent.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5277395825D4D2E700F93FEC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5277393925D4D2E600F93FEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5277394025D4D2E600F93FEC;
+			remoteInfo = "Tagoose-IOS-Plugin";
+		};
+		5277396325D4D2E800F93FEC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5277393925D4D2E600F93FEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5277394025D4D2E600F93FEC;
+			remoteInfo = "Tagoose-IOS-Plugin";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5277394125D4D2E600F93FEC /* Tagoose-IOS-Plugin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tagoose-IOS-Plugin.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5277394425D4D2E600F93FEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5277394625D4D2E600F93FEC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		5277394A25D4D2E700F93FEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5277394D25D4D2E700F93FEC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5277395025D4D2E700F93FEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5277395225D4D2E700F93FEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5277395725D4D2E700F93FEC /* Tagoose-IOS-PluginTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tagoose-IOS-PluginTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5277395B25D4D2E700F93FEC /* Tagoose_IOS_PluginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tagoose_IOS_PluginTests.swift; sourceTree = "<group>"; };
+		5277395D25D4D2E700F93FEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5277396225D4D2E800F93FEC /* Tagoose-IOS-PluginUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tagoose-IOS-PluginUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5277396625D4D2E800F93FEC /* Tagoose_IOS_PluginUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tagoose_IOS_PluginUITests.swift; sourceTree = "<group>"; };
+		5277396825D4D2E800F93FEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5277398525D4D53F00F93FEC /* ScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanView.swift; sourceTree = "<group>"; };
+		5277398A25D4D5A700F93FEC /* ScanRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanRepository.swift; sourceTree = "<group>"; };
+		5277398F25D4D5BE00F93FEC /* ScanController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanController.swift; sourceTree = "<group>"; };
+		5277399F25D4DA1F00F93FEC /* ScanSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanSceneView.swift; sourceTree = "<group>"; };
+		527739A925D5167F00F93FEC /* ScanState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanState.swift; sourceTree = "<group>"; };
+		527739AE25D5168800F93FEC /* ScanEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanEvent.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5277393E25D4D2E600F93FEC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5277395425D4D2E700F93FEC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5277395F25D4D2E800F93FEC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5277393825D4D2E600F93FEC = {
+			isa = PBXGroup;
+			children = (
+				5277394325D4D2E600F93FEC /* Tagoose-IOS-Plugin */,
+				5277395A25D4D2E700F93FEC /* Tagoose-IOS-PluginTests */,
+				5277396525D4D2E800F93FEC /* Tagoose-IOS-PluginUITests */,
+				5277394225D4D2E600F93FEC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5277394225D4D2E600F93FEC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5277394125D4D2E600F93FEC /* Tagoose-IOS-Plugin.app */,
+				5277395725D4D2E700F93FEC /* Tagoose-IOS-PluginTests.xctest */,
+				5277396225D4D2E800F93FEC /* Tagoose-IOS-PluginUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5277394325D4D2E600F93FEC /* Tagoose-IOS-Plugin */ = {
+			isa = PBXGroup;
+			children = (
+				527739A425D4DC7200F93FEC /* Entities */,
+				5277398125D4D35B00F93FEC /* Provider */,
+				5277398025D4D35200F93FEC /* Repository */,
+				5277397F25D4D34B00F93FEC /* Controller */,
+				5277397B25D4D30000F93FEC /* UI */,
+				5277397725D4D2F300F93FEC /* src */,
+				5277394A25D4D2E700F93FEC /* Assets.xcassets */,
+				5277394F25D4D2E700F93FEC /* LaunchScreen.storyboard */,
+				5277395225D4D2E700F93FEC /* Info.plist */,
+				5277394C25D4D2E700F93FEC /* Preview Content */,
+			);
+			path = "Tagoose-IOS-Plugin";
+			sourceTree = "<group>";
+		};
+		5277394C25D4D2E700F93FEC /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				5277394D25D4D2E700F93FEC /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5277395A25D4D2E700F93FEC /* Tagoose-IOS-PluginTests */ = {
+			isa = PBXGroup;
+			children = (
+				5277395B25D4D2E700F93FEC /* Tagoose_IOS_PluginTests.swift */,
+				5277395D25D4D2E700F93FEC /* Info.plist */,
+			);
+			path = "Tagoose-IOS-PluginTests";
+			sourceTree = "<group>";
+		};
+		5277396525D4D2E800F93FEC /* Tagoose-IOS-PluginUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5277396625D4D2E800F93FEC /* Tagoose_IOS_PluginUITests.swift */,
+				5277396825D4D2E800F93FEC /* Info.plist */,
+			);
+			path = "Tagoose-IOS-PluginUITests";
+			sourceTree = "<group>";
+		};
+		5277397725D4D2F300F93FEC /* src */ = {
+			isa = PBXGroup;
+			children = (
+				5277394425D4D2E600F93FEC /* AppDelegate.swift */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		5277397B25D4D30000F93FEC /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				5277399B25D4D9C000F93FEC /* Components */,
+				5277399725D4D80500F93FEC /* Views */,
+				5277394625D4D2E600F93FEC /* SceneDelegate.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		5277397F25D4D34B00F93FEC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				527739A825D5167200F93FEC /* Scan */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5277398025D4D35200F93FEC /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				5277398A25D4D5A700F93FEC /* ScanRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		5277398125D4D35B00F93FEC /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		5277399725D4D80500F93FEC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5277398525D4D53F00F93FEC /* ScanView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5277399B25D4D9C000F93FEC /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				5277399F25D4DA1F00F93FEC /* ScanSceneView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		527739A425D4DC7200F93FEC /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		527739A825D5167200F93FEC /* Scan */ = {
+			isa = PBXGroup;
+			children = (
+				5277398F25D4D5BE00F93FEC /* ScanController.swift */,
+				527739A925D5167F00F93FEC /* ScanState.swift */,
+				527739AE25D5168800F93FEC /* ScanEvent.swift */,
+			);
+			path = Scan;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5277394025D4D2E600F93FEC /* Tagoose-IOS-Plugin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5277396B25D4D2E800F93FEC /* Build configuration list for PBXNativeTarget "Tagoose-IOS-Plugin" */;
+			buildPhases = (
+				5277393D25D4D2E600F93FEC /* Sources */,
+				5277393E25D4D2E600F93FEC /* Frameworks */,
+				5277393F25D4D2E600F93FEC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Tagoose-IOS-Plugin";
+			productName = "Tagoose-IOS-Plugin";
+			productReference = 5277394125D4D2E600F93FEC /* Tagoose-IOS-Plugin.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5277395625D4D2E700F93FEC /* Tagoose-IOS-PluginTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5277396E25D4D2E800F93FEC /* Build configuration list for PBXNativeTarget "Tagoose-IOS-PluginTests" */;
+			buildPhases = (
+				5277395325D4D2E700F93FEC /* Sources */,
+				5277395425D4D2E700F93FEC /* Frameworks */,
+				5277395525D4D2E700F93FEC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5277395925D4D2E700F93FEC /* PBXTargetDependency */,
+			);
+			name = "Tagoose-IOS-PluginTests";
+			productName = "Tagoose-IOS-PluginTests";
+			productReference = 5277395725D4D2E700F93FEC /* Tagoose-IOS-PluginTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5277396125D4D2E800F93FEC /* Tagoose-IOS-PluginUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5277397125D4D2E800F93FEC /* Build configuration list for PBXNativeTarget "Tagoose-IOS-PluginUITests" */;
+			buildPhases = (
+				5277395E25D4D2E800F93FEC /* Sources */,
+				5277395F25D4D2E800F93FEC /* Frameworks */,
+				5277396025D4D2E800F93FEC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5277396425D4D2E800F93FEC /* PBXTargetDependency */,
+			);
+			name = "Tagoose-IOS-PluginUITests";
+			productName = "Tagoose-IOS-PluginUITests";
+			productReference = 5277396225D4D2E800F93FEC /* Tagoose-IOS-PluginUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5277393925D4D2E600F93FEC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1210;
+				LastUpgradeCheck = 1210;
+				TargetAttributes = {
+					5277394025D4D2E600F93FEC = {
+						CreatedOnToolsVersion = 12.1;
+					};
+					5277395625D4D2E700F93FEC = {
+						CreatedOnToolsVersion = 12.1;
+						TestTargetID = 5277394025D4D2E600F93FEC;
+					};
+					5277396125D4D2E800F93FEC = {
+						CreatedOnToolsVersion = 12.1;
+						TestTargetID = 5277394025D4D2E600F93FEC;
+					};
+				};
+			};
+			buildConfigurationList = 5277393C25D4D2E600F93FEC /* Build configuration list for PBXProject "Tagoose-IOS-Plugin" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5277393825D4D2E600F93FEC;
+			productRefGroup = 5277394225D4D2E600F93FEC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5277394025D4D2E600F93FEC /* Tagoose-IOS-Plugin */,
+				5277395625D4D2E700F93FEC /* Tagoose-IOS-PluginTests */,
+				5277396125D4D2E800F93FEC /* Tagoose-IOS-PluginUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5277393F25D4D2E600F93FEC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5277395125D4D2E700F93FEC /* LaunchScreen.storyboard in Resources */,
+				5277394E25D4D2E700F93FEC /* Preview Assets.xcassets in Resources */,
+				5277394B25D4D2E700F93FEC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5277395525D4D2E700F93FEC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5277396025D4D2E800F93FEC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5277393D25D4D2E600F93FEC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5277394525D4D2E600F93FEC /* AppDelegate.swift in Sources */,
+				527739AF25D5168800F93FEC /* ScanEvent.swift in Sources */,
+				5277398625D4D53F00F93FEC /* ScanView.swift in Sources */,
+				527739A025D4DA1F00F93FEC /* ScanSceneView.swift in Sources */,
+				5277394725D4D2E600F93FEC /* SceneDelegate.swift in Sources */,
+				527739AA25D5167F00F93FEC /* ScanState.swift in Sources */,
+				5277398B25D4D5A700F93FEC /* ScanRepository.swift in Sources */,
+				5277399025D4D5BE00F93FEC /* ScanController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5277395325D4D2E700F93FEC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5277395C25D4D2E700F93FEC /* Tagoose_IOS_PluginTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5277395E25D4D2E800F93FEC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5277396725D4D2E800F93FEC /* Tagoose_IOS_PluginUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5277395925D4D2E700F93FEC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5277394025D4D2E600F93FEC /* Tagoose-IOS-Plugin */;
+			targetProxy = 5277395825D4D2E700F93FEC /* PBXContainerItemProxy */;
+		};
+		5277396425D4D2E800F93FEC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5277394025D4D2E600F93FEC /* Tagoose-IOS-Plugin */;
+			targetProxy = 5277396325D4D2E800F93FEC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5277394F25D4D2E700F93FEC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5277395025D4D2E700F93FEC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5277396925D4D2E800F93FEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5277396A25D4D2E800F93FEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5277396C25D4D2E800F93FEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Tagoose-IOS-Plugin/Preview Content\"";
+				DEVELOPMENT_TEAM = 7V33CQFMZ8;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Tagoose-IOS-Plugin/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "SpotterDev.Tagoose-IOS-Plugin";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5277396D25D4D2E800F93FEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Tagoose-IOS-Plugin/Preview Content\"";
+				DEVELOPMENT_TEAM = 7V33CQFMZ8;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Tagoose-IOS-Plugin/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "SpotterDev.Tagoose-IOS-Plugin";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5277396F25D4D2E800F93FEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7V33CQFMZ8;
+				INFOPLIST_FILE = "Tagoose-IOS-PluginTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "SpotterDev.Tagoose-IOS-PluginTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tagoose-IOS-Plugin.app/Tagoose-IOS-Plugin";
+			};
+			name = Debug;
+		};
+		5277397025D4D2E800F93FEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7V33CQFMZ8;
+				INFOPLIST_FILE = "Tagoose-IOS-PluginTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "SpotterDev.Tagoose-IOS-PluginTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tagoose-IOS-Plugin.app/Tagoose-IOS-Plugin";
+			};
+			name = Release;
+		};
+		5277397225D4D2E800F93FEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7V33CQFMZ8;
+				INFOPLIST_FILE = "Tagoose-IOS-PluginUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "SpotterDev.Tagoose-IOS-PluginUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Tagoose-IOS-Plugin";
+			};
+			name = Debug;
+		};
+		5277397325D4D2E800F93FEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7V33CQFMZ8;
+				INFOPLIST_FILE = "Tagoose-IOS-PluginUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "SpotterDev.Tagoose-IOS-PluginUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Tagoose-IOS-Plugin";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5277393C25D4D2E600F93FEC /* Build configuration list for PBXProject "Tagoose-IOS-Plugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5277396925D4D2E800F93FEC /* Debug */,
+				5277396A25D4D2E800F93FEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5277396B25D4D2E800F93FEC /* Build configuration list for PBXNativeTarget "Tagoose-IOS-Plugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5277396C25D4D2E800F93FEC /* Debug */,
+				5277396D25D4D2E800F93FEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5277396E25D4D2E800F93FEC /* Build configuration list for PBXNativeTarget "Tagoose-IOS-PluginTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5277396F25D4D2E800F93FEC /* Debug */,
+				5277397025D4D2E800F93FEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5277397125D4D2E800F93FEC /* Build configuration list for PBXNativeTarget "Tagoose-IOS-PluginUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5277397225D4D2E800F93FEC /* Debug */,
+				5277397325D4D2E800F93FEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5277393925D4D2E600F93FEC /* Project object */;
+}
