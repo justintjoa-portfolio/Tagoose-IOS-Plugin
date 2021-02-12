@@ -15,6 +15,7 @@ class ScanSceneView: ARSCNView {
     
     func doSomething(val configuration:ARWorldTrackingConfiguration) {
         session.run(configuration)
+        
     }
     
     required init?(coder: NSCoder) {
