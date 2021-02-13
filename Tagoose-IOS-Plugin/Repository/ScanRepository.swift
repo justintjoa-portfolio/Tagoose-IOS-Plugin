@@ -12,28 +12,12 @@ import SceneKit
 
 class ScanRepository {
     
-    init(scannedReferenceObject:ARReferenceObject, referenceObjectToMerge:ARReferenceObject) {
+    init(scannedReferenceObject:ARReferenceObject) {
         self.scannedReferenceObject = scannedReferenceObject;
     }
     
     private var scannedReferenceObject:ARReferenceObject
 
-
-    func completionHandler(referenceObject:ARReferenceObject?, mergeObject:ARReferenceObject?, transform: simd_float4x4, newName:String) -> ARReferenceObject? {
-        return referenceObject.flatMap {
-            (rObj) in
-            return (processReferenceObj(referenceObject: rObj, transform: transform, newName: newName)).flatMap {
-                (sObj) in
-                return mergeObject.flatMap {
-                    (mObj) in
-                    return mergeObj(scannedObject: sObj, mergeObject: mObj)
-                }
-                
-            }
-            
-        }
-    
-    }
     
     
     
@@ -55,6 +39,35 @@ class ScanRepository {
         }
         
     }
+
+    func completionHandler(referenceObject:ARReferenceObject?, mergeObject:ARReferenceObject?, transform: simd_float4x4, newName:String) -> ARReferenceObject? {
+        return referenceObject.flatMap {
+            (rObj) in
+            return (processReferenceObj(referenceObject: rObj, transform: transform, newName: newName)).flatMap {
+                (sObj) in
+                return mergeObject.flatMap {
+                    (mObj) in
+                    return mergeObj(scannedObject: sObj, mergeObject: mObj)
+                }
+                
+            }
+            
+        }
+    
+    }
+    
+    func createReferenceObject(session:ARSession, referenceObject:ARReferenceObject?, mergeObject:ARReferenceObject?, transform: simd_float4x4, center: simd_float3, extent: simd_float3, newName:String) {
+        session.createReferenceObject(
+            transform: transform,
+            center: center,
+            extent: extent,
+            completionHandler: { object, error in
+                self.completionHandler(referenceObject: referenceObject, mergeObject: mergeObject, transform: transform, newName: newName)
+            })
+    }
+    
+    
+   
     
 
 

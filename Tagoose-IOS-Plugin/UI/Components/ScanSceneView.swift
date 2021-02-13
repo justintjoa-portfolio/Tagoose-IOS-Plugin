@@ -11,7 +11,7 @@ import ARKit
 
 
 class ScanSceneView: ARSCNView {
-    var repository:ScanRepository;
+
     
     func doSomething(val configuration:ARWorldTrackingConfiguration) {
         session.run(configuration)
@@ -22,12 +22,13 @@ class ScanSceneView: ARSCNView {
             fatalError("init(coder:) has not been implemented")
     }
     
-    init(repository:ScanRepository, frame:CGRect) {
-        self.repository = repository;
+    
+    /*
+    init(frame:CGRect) {
         super.init(frame: frame)
         
     }
-    
+    */
 
     
     

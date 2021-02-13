@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13EFC2E69CDF218D64D1C0D6 /* Pods_Tagoose_IOS_PluginTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8613D5B5D2D98626B8CBA05E /* Pods_Tagoose_IOS_PluginTests.framework */; };
+		29D25183C95E8DE9E23AA01E /* Pods_Tagoose_IOS_Plugin_Tagoose_IOS_PluginUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BF3067BE359657A9265712A /* Pods_Tagoose_IOS_Plugin_Tagoose_IOS_PluginUITests.framework */; };
 		5277394525D4D2E600F93FEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5277394425D4D2E600F93FEC /* AppDelegate.swift */; };
 		5277394725D4D2E600F93FEC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5277394625D4D2E600F93FEC /* SceneDelegate.swift */; };
 		5277394B25D4D2E700F93FEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5277394A25D4D2E700F93FEC /* Assets.xcassets */; };
@@ -20,6 +22,7 @@
 		527739A025D4DA1F00F93FEC /* ScanSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5277399F25D4DA1F00F93FEC /* ScanSceneView.swift */; };
 		527739AA25D5167F00F93FEC /* ScanState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527739A925D5167F00F93FEC /* ScanState.swift */; };
 		527739AF25D5168800F93FEC /* ScanEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527739AE25D5168800F93FEC /* ScanEvent.swift */; };
+		FD3AED62F6E26C95A671DBBE /* Pods_Tagoose_IOS_Plugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68AF16FCCF03E426A576AA6D /* Pods_Tagoose_IOS_Plugin.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2CBFE11A30BCF2276615B906 /* Pods-Tagoose-IOS-Plugin-Tagoose-IOS-PluginUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tagoose-IOS-Plugin-Tagoose-IOS-PluginUITests.debug.xcconfig"; path = "Target Support Files/Pods-Tagoose-IOS-Plugin-Tagoose-IOS-PluginUITests/Pods-Tagoose-IOS-Plugin-Tagoose-IOS-PluginUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		3BF3067BE359657A9265712A /* Pods_Tagoose_IOS_Plugin_Tagoose_IOS_PluginUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tagoose_IOS_Plugin_Tagoose_IOS_PluginUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5277394125D4D2E600F93FEC /* Tagoose-IOS-Plugin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tagoose-IOS-Plugin.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5277394425D4D2E600F93FEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5277394625D4D2E600F93FEC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +64,13 @@
 		5277399F25D4DA1F00F93FEC /* ScanSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanSceneView.swift; sourceTree = "<group>"; };
 		527739A925D5167F00F93FEC /* ScanState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanState.swift; sourceTree = "<group>"; };
 		527739AE25D5168800F93FEC /* ScanEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanEvent.swift; sourceTree = "<group>"; };
+		68AF16FCCF03E426A576AA6D /* Pods_Tagoose_IOS_Plugin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tagoose_IOS_Plugin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8613D5B5D2D98626B8CBA05E /* Pods_Tagoose_IOS_PluginTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tagoose_IOS_PluginTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93C76236FE9D8506C73BD906 /* Pods-Tagoose-IOS-Plugin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tagoose-IOS-Plugin.debug.xcconfig"; path = "Target Support Files/Pods-Tagoose-IOS-Plugin/Pods-Tagoose-IOS-Plugin.debug.xcconfig"; sourceTree = "<group>"; };
+		A972F5E7E8C4EDF17E6A42E9 /* Pods-Tagoose-IOS-Plugin-Tagoose-IOS-PluginUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tagoose-IOS-Plugin-Tagoose-IOS-PluginUITests.release.xcconfig"; path = "Target Support Files/Pods-Tagoose-IOS-Plugin-Tagoose-IOS-PluginUITests/Pods-Tagoose-IOS-Plugin-Tagoose-IOS-PluginUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B6C0501B4EC3C66D33EB1BCC /* Pods-Tagoose-IOS-Plugin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tagoose-IOS-Plugin.release.xcconfig"; path = "Target Support Files/Pods-Tagoose-IOS-Plugin/Pods-Tagoose-IOS-Plugin.release.xcconfig"; sourceTree = "<group>"; };
+		C388F50239558F7ABD1091AF /* Pods-Tagoose-IOS-PluginTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tagoose-IOS-PluginTests.debug.xcconfig"; path = "Target Support Files/Pods-Tagoose-IOS-PluginTests/Pods-Tagoose-IOS-PluginTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D70CD699DB941E6CA01107AD /* Pods-Tagoose-IOS-PluginTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tagoose-IOS-PluginTests.release.xcconfig"; path = "Target Support Files/Pods-Tagoose-IOS-PluginTests/Pods-Tagoose-IOS-PluginTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD3AED62F6E26C95A671DBBE /* Pods_Tagoose_IOS_Plugin.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13EFC2E69CDF218D64D1C0D6 /* Pods_Tagoose_IOS_PluginTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29D25183C95E8DE9E23AA01E /* Pods_Tagoose_IOS_Plugin_Tagoose_IOS_PluginUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +108,8 @@
 				5277395A25D4D2E700F93FEC /* Tagoose-IOS-PluginTests */,
 				5277396525D4D2E800F93FEC /* Tagoose-IOS-PluginUITests */,
 				5277394225D4D2E600F93FEC /* Products */,
+				57D8FA14660BEE57DA444A24 /* Pods */,
+				9EFB1CAD5F73511082C3CCD3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -223,6 +240,30 @@
 			path = Scan;
 			sourceTree = "<group>";
 		};
+		57D8FA14660BEE57DA444A24 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				93C76236FE9D8506C73BD906 /* Pods-Tagoose-IOS-Plugin.debug.xcconfig */,
+				B6C0501B4EC3C66D33EB1BCC /* Pods-Tagoose-IOS-Plugin.release.xcconfig */,
+				2CBFE11A30BCF2276615B906 /* Pods-Tagoose-IOS-Plugin-Tagoose-IOS-PluginUITests.debug.xcconfig */,
+				A972F5E7E8C4EDF17E6A42E9 /* Pods-Tagoose-IOS-Plugin-Tagoose-IOS-PluginUITests.release.xcconfig */,
+				C388F50239558F7ABD1091AF /* Pods-Tagoose-IOS-PluginTests.debug.xcconfig */,
+				D70CD699DB941E6CA01107AD /* Pods-Tagoose-IOS-PluginTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9EFB1CAD5F73511082C3CCD3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				68AF16FCCF03E426A576AA6D /* Pods_Tagoose_IOS_Plugin.framework */,
+				3BF3067BE359657A9265712A /* Pods_Tagoose_IOS_Plugin_Tagoose_IOS_PluginUITests.framework */,
+				8613D5B5D2D98626B8CBA05E /* Pods_Tagoose_IOS_PluginTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -230,9 +271,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5277396B25D4D2E800F93FEC /* Build configuration list for PBXNativeTarget "Tagoose-IOS-Plugin" */;
 			buildPhases = (
+				EB378E2FCB96A5DA15317881 /* [CP] Check Pods Manifest.lock */,
 				5277393D25D4D2E600F93FEC /* Sources */,
 				5277393E25D4D2E600F93FEC /* Frameworks */,
 				5277393F25D4D2E600F93FEC /* Resources */,
+				1E6A83C9FD558E490B29047C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -247,6 +290,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5277396E25D4D2E800F93FEC /* Build configuration list for PBXNativeTarget "Tagoose-IOS-PluginTests" */;
 			buildPhases = (
+				075E0808066434ED3DCBEA2C /* [CP] Check Pods Manifest.lock */,
 				5277395325D4D2E700F93FEC /* Sources */,
 				5277395425D4D2E700F93FEC /* Frameworks */,
 				5277395525D4D2E700F93FEC /* Resources */,
@@ -265,9 +309,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5277397125D4D2E800F93FEC /* Build configuration list for PBXNativeTarget "Tagoose-IOS-PluginUITests" */;
 			buildPhases = (
+				A76DBA8694BD58C69513C7CC /* [CP] Check Pods Manifest.lock */,
 				5277395E25D4D2E800F93FEC /* Sources */,
 				5277395F25D4D2E800F93FEC /* Frameworks */,
 				5277396025D4D2E800F93FEC /* Resources */,
+				D70537BF9DF7E1B7F3700BE9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -347,6 +393,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		075E0808066434ED3DCBEA2C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tagoose-IOS-PluginTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1E6A83C9FD558E490B29047C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tagoose-IOS-Plugin/Pods-Tagoose-IOS-Plugin-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tagoose-IOS-Plugin/Pods-Tagoose-IOS-Plugin-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Tagoose-IOS-Plugin/Pods-Tagoose-IOS-Plugin-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A76DBA8694BD58C69513C7CC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tagoose-IOS-Plugin-Tagoose-IOS-PluginUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D70537BF9DF7E1B7F3700BE9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tagoose-IOS-Plugin-Tagoose-IOS-PluginUITests/Pods-Tagoose-IOS-Plugin-Tagoose-IOS-PluginUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tagoose-IOS-Plugin-Tagoose-IOS-PluginUITests/Pods-Tagoose-IOS-Plugin-Tagoose-IOS-PluginUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Tagoose-IOS-Plugin-Tagoose-IOS-PluginUITests/Pods-Tagoose-IOS-Plugin-Tagoose-IOS-PluginUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB378E2FCB96A5DA15317881 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tagoose-IOS-Plugin-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5277393D25D4D2E600F93FEC /* Sources */ = {
@@ -525,6 +674,7 @@
 		};
 		5277396C25D4D2E800F93FEC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93C76236FE9D8506C73BD906 /* Pods-Tagoose-IOS-Plugin.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -546,6 +696,7 @@
 		};
 		5277396D25D4D2E800F93FEC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6C0501B4EC3C66D33EB1BCC /* Pods-Tagoose-IOS-Plugin.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -567,6 +718,7 @@
 		};
 		5277396F25D4D2E800F93FEC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C388F50239558F7ABD1091AF /* Pods-Tagoose-IOS-PluginTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -589,6 +741,7 @@
 		};
 		5277397025D4D2E800F93FEC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D70CD699DB941E6CA01107AD /* Pods-Tagoose-IOS-PluginTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -611,6 +764,7 @@
 		};
 		5277397225D4D2E800F93FEC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CBFE11A30BCF2276615B906 /* Pods-Tagoose-IOS-Plugin-Tagoose-IOS-PluginUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -631,6 +785,7 @@
 		};
 		5277397325D4D2E800F93FEC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A972F5E7E8C4EDF17E6A42E9 /* Pods-Tagoose-IOS-Plugin-Tagoose-IOS-PluginUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
