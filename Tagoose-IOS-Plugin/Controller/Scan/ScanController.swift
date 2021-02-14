@@ -22,24 +22,17 @@ class ScanController {
         self._repository_Loader = repositoryCreator
     }
     
-    func update(event:ScanEvent) -> Observable<ScanState> {
-        return Observable.create { observer in
-            if (self._repository.createReferenceObject(referenceObject: event.referenceObject, mergeObject: event.mergeObject, transform: event.transform, center: event.center, newName: event.newName) != nil) {
-                observer.on(.next(SuccessfulScan()))
-            }
-            else {
-                observer.on(.next(FailedScan(errorMessage: "Merge failed")))
-                
-            }
-            observer.on(.completed)
-            return Disposables.create()
-        }
-    }
 
+ 
 
-
-    
-    
 }
+    
+    
+
+
+
+    
+    
+
 
 
