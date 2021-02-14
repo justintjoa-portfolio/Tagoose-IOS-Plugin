@@ -12,3 +12,15 @@ class ScanState {
     
 }
 
+class SuccessfulScan: ScanState {
+    
+}
+
+class FailedScan: ScanState {
+    var errorMessage:String
+    
+    init(errorMessage:String) {
+        self.errorMessage = errorMessage
+    }
+}
+

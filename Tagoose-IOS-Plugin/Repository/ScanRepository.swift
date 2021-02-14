@@ -56,14 +56,9 @@ class ScanRepository {
     
     }
     
-    func createReferenceObject(session:ARSession, referenceObject:ARReferenceObject?, mergeObject:ARReferenceObject?, transform: simd_float4x4, center: simd_float3, extent: simd_float3, newName:String) {
-        session.createReferenceObject(
-            transform: transform,
-            center: center,
-            extent: extent,
-            completionHandler: { object, error in
-                self.completionHandler(referenceObject: referenceObject, mergeObject: mergeObject, transform: transform, newName: newName)
-            })
+    func createReferenceObject(referenceObject:ARReferenceObject?, mergeObject:ARReferenceObject?, transform: simd_float4x4, center: simd_float3, newName:String)-> ARReferenceObject? {
+        return self.completionHandler(referenceObject: referenceObject, mergeObject: mergeObject, transform: transform, newName: newName) 
+
     }
     
     
