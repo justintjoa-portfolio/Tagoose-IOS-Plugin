@@ -4,7 +4,6 @@
 //
 //  Created by Hendrik Tjoa on 2/10/21.
 //
-
 import Foundation
 
 import ARKit
@@ -15,6 +14,7 @@ class ScanSceneView: ARSCNView {
     
     func doSomething(val configuration:ARWorldTrackingConfiguration) {
         session.run(configuration)
+
         
     }
     

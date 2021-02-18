@@ -12,34 +12,41 @@ import RxSwift
 import RxCocoa
 
 
-class ScanController {
+class ScanController: UIViewController {
     
-    var _repository_Loader:() -> ScanRepository
+    var sceneView: ARSCNView?
     
-    lazy var _repository:ScanRepository = _repository_Loader()
-    
-    init(repositoryCreator: @escaping () -> ScanRepository) {
-        self._repository_Loader = repositoryCreator
+    init(sceneView:ARSCNView) {
+        self.sceneView = sceneView
+        super.init(nibName: nil, bundle: nil)
     }
     
-    func update(event:ScanEvent) -> Observable<ScanState> {
-        return Observable.create { observer in
-            if (self._repository.createReferenceObject(referenceObject: event.referenceObject, mergeObject: event.mergeObject, transform: event.transform, center: event.center, newName: event.newName) != nil) {
-                observer.on(.next(SuccessfulScan()))
-            }
-            else {
-                observer.on(.next(FailedScan(errorMessage: "Merge failed")))
-                
-            }
-            observer.on(.completed)
-            return Disposables.create()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.view.addSubview(sceneView!)
+        let config = ARObjectScanningConfiguration()
+        sceneView?.session.run(config, options: .resetTracking)
+
+    }
+    
+    required init?(coder aDecoder: NSCoder)
+        {
+            super.init(coder: aDecoder)
         }
-    }
-
-
-
     
-    
+
+
+
+ 
+
 }
+    
+    
+
+
+
+    
+    
+
 
 

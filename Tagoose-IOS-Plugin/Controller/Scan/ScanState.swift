@@ -12,15 +12,17 @@ class ScanState {
     
 }
 
-class SuccessfulScan: ScanState {
+class Success: ScanState {
     
 }
 
-class FailedScan: ScanState {
-    var errorMessage:String
+class Failure: ScanState {
+    var message: String
     
-    init(errorMessage:String) {
-        self.errorMessage = errorMessage
+    init(message:String) {
+        self.message = message
     }
 }
+
+
 

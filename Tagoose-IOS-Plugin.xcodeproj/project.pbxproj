@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,9 +19,29 @@
 		5277398625D4D53F00F93FEC /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5277398525D4D53F00F93FEC /* ScanView.swift */; };
 		5277398B25D4D5A700F93FEC /* ScanRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5277398A25D4D5A700F93FEC /* ScanRepository.swift */; };
 		5277399025D4D5BE00F93FEC /* ScanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5277398F25D4D5BE00F93FEC /* ScanController.swift */; };
-		527739A025D4DA1F00F93FEC /* ScanSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5277399F25D4DA1F00F93FEC /* ScanSceneView.swift */; };
 		527739AA25D5167F00F93FEC /* ScanState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527739A925D5167F00F93FEC /* ScanState.swift */; };
 		527739AF25D5168800F93FEC /* ScanEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527739AE25D5168800F93FEC /* ScanEvent.swift */; };
+		529956EB25D9C7760015842A /* ScanSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529956EA25D9C7760015842A /* ScanSceneView.swift */; };
+		529956F825D9C92A0015842A /* ObjectSearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529956F725D9C92A0015842A /* ObjectSearchRepository.swift */; };
+		5299570525D9C9630015842A /* ResizeObjectRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5299570425D9C9630015842A /* ResizeObjectRepository.swift */; };
+		5299575825D9DBE10015842A /* ScannedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5299574B25D9DBE00015842A /* ScannedObject.swift */; };
+		5299575925D9DBE10015842A /* ScannedPointCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5299574C25D9DBE00015842A /* ScannedPointCloud.swift */; };
+		5299575A25D9DBE10015842A /* DetectedPointCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5299574D25D9DBE00015842A /* DetectedPointCloud.swift */; };
+		5299575B25D9DBE10015842A /* DetectedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5299574E25D9DBE00015842A /* DetectedObject.swift */; };
+		5299575C25D9DBE10015842A /* Snapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5299574F25D9DBE00015842A /* Snapping.swift */; };
+		5299575D25D9DBE10015842A /* BoundingBoxSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5299575025D9DBE00015842A /* BoundingBoxSide.swift */; };
+		5299575E25D9DBE10015842A /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5299575125D9DBE00015842A /* Tile.swift */; };
+		5299575F25D9DBE10015842A /* ObjectOriginAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5299575225D9DBE00015842A /* ObjectOriginAxis.swift */; };
+		5299576025D9DBE10015842A /* DetectedBoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5299575325D9DBE00015842A /* DetectedBoundingBox.swift */; };
+		5299576125D9DBE10015842A /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5299575425D9DBE00015842A /* Wireframe.swift */; };
+		5299576225D9DBE10015842A /* BoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5299575525D9DBE00015842A /* BoundingBox.swift */; };
+		5299576325D9DBE10015842A /* PointCloud+CreateVisualization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5299575625D9DBE10015842A /* PointCloud+CreateVisualization.swift */; };
+		5299576425D9DBE10015842A /* ObjectOrigin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5299575725D9DBE10015842A /* ObjectOrigin.swift */; };
+		5299577025D9E0980015842A /* ThresholdRotationGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5299576D25D9E0980015842A /* ThresholdRotationGestureRecognizer.swift */; };
+		5299577125D9E0980015842A /* ThresholdPinchGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5299576E25D9E0980015842A /* ThresholdPinchGestureRecognizer.swift */; };
+		5299577225D9E0980015842A /* ThresholdPanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5299576F25D9E0980015842A /* ThresholdPanGestureRecognizer.swift */; };
+		5299577725D9E15C0015842A /* ModelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5299577625D9E15C0015842A /* ModelProvider.swift */; };
+		5299578825D9E4110015842A /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5299578725D9E4110015842A /* Utilities.swift */; };
 		FD3AED62F6E26C95A671DBBE /* Pods_Tagoose_IOS_Plugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68AF16FCCF03E426A576AA6D /* Pods_Tagoose_IOS_Plugin.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,9 +81,29 @@
 		5277398525D4D53F00F93FEC /* ScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanView.swift; sourceTree = "<group>"; };
 		5277398A25D4D5A700F93FEC /* ScanRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanRepository.swift; sourceTree = "<group>"; };
 		5277398F25D4D5BE00F93FEC /* ScanController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanController.swift; sourceTree = "<group>"; };
-		5277399F25D4DA1F00F93FEC /* ScanSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanSceneView.swift; sourceTree = "<group>"; };
 		527739A925D5167F00F93FEC /* ScanState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanState.swift; sourceTree = "<group>"; };
 		527739AE25D5168800F93FEC /* ScanEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanEvent.swift; sourceTree = "<group>"; };
+		529956EA25D9C7760015842A /* ScanSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanSceneView.swift; sourceTree = "<group>"; };
+		529956F725D9C92A0015842A /* ObjectSearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectSearchRepository.swift; sourceTree = "<group>"; };
+		5299570425D9C9630015842A /* ResizeObjectRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizeObjectRepository.swift; sourceTree = "<group>"; };
+		5299574B25D9DBE00015842A /* ScannedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannedObject.swift; sourceTree = "<group>"; };
+		5299574C25D9DBE00015842A /* ScannedPointCloud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannedPointCloud.swift; sourceTree = "<group>"; };
+		5299574D25D9DBE00015842A /* DetectedPointCloud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetectedPointCloud.swift; sourceTree = "<group>"; };
+		5299574E25D9DBE00015842A /* DetectedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetectedObject.swift; sourceTree = "<group>"; };
+		5299574F25D9DBE00015842A /* Snapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Snapping.swift; sourceTree = "<group>"; };
+		5299575025D9DBE00015842A /* BoundingBoxSide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoundingBoxSide.swift; sourceTree = "<group>"; };
+		5299575125D9DBE00015842A /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
+		5299575225D9DBE00015842A /* ObjectOriginAxis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectOriginAxis.swift; sourceTree = "<group>"; };
+		5299575325D9DBE00015842A /* DetectedBoundingBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetectedBoundingBox.swift; sourceTree = "<group>"; };
+		5299575425D9DBE00015842A /* Wireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wireframe.swift; sourceTree = "<group>"; };
+		5299575525D9DBE00015842A /* BoundingBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoundingBox.swift; sourceTree = "<group>"; };
+		5299575625D9DBE10015842A /* PointCloud+CreateVisualization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PointCloud+CreateVisualization.swift"; sourceTree = "<group>"; };
+		5299575725D9DBE10015842A /* ObjectOrigin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectOrigin.swift; sourceTree = "<group>"; };
+		5299576D25D9E0980015842A /* ThresholdRotationGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThresholdRotationGestureRecognizer.swift; sourceTree = "<group>"; };
+		5299576E25D9E0980015842A /* ThresholdPinchGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThresholdPinchGestureRecognizer.swift; sourceTree = "<group>"; };
+		5299576F25D9E0980015842A /* ThresholdPanGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThresholdPanGestureRecognizer.swift; sourceTree = "<group>"; };
+		5299577625D9E15C0015842A /* ModelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelProvider.swift; sourceTree = "<group>"; };
+		5299578725D9E4110015842A /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		68AF16FCCF03E426A576AA6D /* Pods_Tagoose_IOS_Plugin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tagoose_IOS_Plugin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8613D5B5D2D98626B8CBA05E /* Pods_Tagoose_IOS_PluginTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tagoose_IOS_PluginTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93C76236FE9D8506C73BD906 /* Pods-Tagoose-IOS-Plugin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tagoose-IOS-Plugin.debug.xcconfig"; path = "Target Support Files/Pods-Tagoose-IOS-Plugin/Pods-Tagoose-IOS-Plugin.debug.xcconfig"; sourceTree = "<group>"; };
@@ -126,7 +166,8 @@
 		5277394325D4D2E600F93FEC /* Tagoose-IOS-Plugin */ = {
 			isa = PBXGroup;
 			children = (
-				527739A425D4DC7200F93FEC /* Entities */,
+				5299577E25D9E3F90015842A /* Utilities */,
+				5299571525D9CCB40015842A /* Entities */,
 				5277398125D4D35B00F93FEC /* Provider */,
 				5277398025D4D35200F93FEC /* Repository */,
 				5277397F25D4D34B00F93FEC /* Controller */,
@@ -177,7 +218,8 @@
 		5277397B25D4D30000F93FEC /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				5277399B25D4D9C000F93FEC /* Components */,
+				5299576C25D9E0910015842A /* Gesture */,
+				529956DE25D9C73F0015842A /* Components */,
 				5277399725D4D80500F93FEC /* Views */,
 				5277394625D4D2E600F93FEC /* SceneDelegate.swift */,
 			);
@@ -187,6 +229,8 @@
 		5277397F25D4D34B00F93FEC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				5299570B25D9C9BD0015842A /* ResizeObject */,
+				5299570A25D9C9B30015842A /* ObjectSearch */,
 				527739A825D5167200F93FEC /* Scan */,
 			);
 			path = Controller;
@@ -196,6 +240,8 @@
 			isa = PBXGroup;
 			children = (
 				5277398A25D4D5A700F93FEC /* ScanRepository.swift */,
+				529956F725D9C92A0015842A /* ObjectSearchRepository.swift */,
+				5299570425D9C9630015842A /* ResizeObjectRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -203,6 +249,7 @@
 		5277398125D4D35B00F93FEC /* Provider */ = {
 			isa = PBXGroup;
 			children = (
+				5299577625D9E15C0015842A /* ModelProvider.swift */,
 			);
 			path = Provider;
 			sourceTree = "<group>";
@@ -215,21 +262,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		5277399B25D4D9C000F93FEC /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				5277399F25D4DA1F00F93FEC /* ScanSceneView.swift */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
-		527739A425D4DC7200F93FEC /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Entities;
-			sourceTree = "<group>";
-		};
 		527739A825D5167200F93FEC /* Scan */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,6 +270,74 @@
 				527739AE25D5168800F93FEC /* ScanEvent.swift */,
 			);
 			path = Scan;
+			sourceTree = "<group>";
+		};
+		529956DE25D9C73F0015842A /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				529956EA25D9C7760015842A /* ScanSceneView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		5299570A25D9C9B30015842A /* ObjectSearch */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ObjectSearch;
+			sourceTree = "<group>";
+		};
+		5299570B25D9C9BD0015842A /* ResizeObject */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ResizeObject;
+			sourceTree = "<group>";
+		};
+		5299571525D9CCB40015842A /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				5299574A25D9DBD10015842A /* 3D UI */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		5299574A25D9DBD10015842A /* 3D UI */ = {
+			isa = PBXGroup;
+			children = (
+				5299575525D9DBE00015842A /* BoundingBox.swift */,
+				5299575025D9DBE00015842A /* BoundingBoxSide.swift */,
+				5299575325D9DBE00015842A /* DetectedBoundingBox.swift */,
+				5299574E25D9DBE00015842A /* DetectedObject.swift */,
+				5299574D25D9DBE00015842A /* DetectedPointCloud.swift */,
+				5299575725D9DBE10015842A /* ObjectOrigin.swift */,
+				5299575225D9DBE00015842A /* ObjectOriginAxis.swift */,
+				5299575625D9DBE10015842A /* PointCloud+CreateVisualization.swift */,
+				5299574B25D9DBE00015842A /* ScannedObject.swift */,
+				5299574C25D9DBE00015842A /* ScannedPointCloud.swift */,
+				5299574F25D9DBE00015842A /* Snapping.swift */,
+				5299575125D9DBE00015842A /* Tile.swift */,
+				5299575425D9DBE00015842A /* Wireframe.swift */,
+			);
+			path = "3D UI";
+			sourceTree = "<group>";
+		};
+		5299576C25D9E0910015842A /* Gesture */ = {
+			isa = PBXGroup;
+			children = (
+				5299576F25D9E0980015842A /* ThresholdPanGestureRecognizer.swift */,
+				5299576E25D9E0980015842A /* ThresholdPinchGestureRecognizer.swift */,
+				5299576D25D9E0980015842A /* ThresholdRotationGestureRecognizer.swift */,
+			);
+			path = Gesture;
+			sourceTree = "<group>";
+		};
+		5299577E25D9E3F90015842A /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				5299578725D9E4110015842A /* Utilities.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		57D8FA14660BEE57DA444A24 /* Pods */ = {
@@ -250,7 +350,6 @@
 				C388F50239558F7ABD1091AF /* Pods-Tagoose-IOS-PluginTests.debug.xcconfig */,
 				D70CD699DB941E6CA01107AD /* Pods-Tagoose-IOS-PluginTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -502,14 +601,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5299577725D9E15C0015842A /* ModelProvider.swift in Sources */,
 				5277394525D4D2E600F93FEC /* AppDelegate.swift in Sources */,
+				5299575E25D9DBE10015842A /* Tile.swift in Sources */,
+				5299575D25D9DBE10015842A /* BoundingBoxSide.swift in Sources */,
+				5299576325D9DBE10015842A /* PointCloud+CreateVisualization.swift in Sources */,
+				5299577225D9E0980015842A /* ThresholdPanGestureRecognizer.swift in Sources */,
+				5299575B25D9DBE10015842A /* DetectedObject.swift in Sources */,
 				527739AF25D5168800F93FEC /* ScanEvent.swift in Sources */,
+				5299576025D9DBE10015842A /* DetectedBoundingBox.swift in Sources */,
+				5299575C25D9DBE10015842A /* Snapping.swift in Sources */,
 				5277398625D4D53F00F93FEC /* ScanView.swift in Sources */,
-				527739A025D4DA1F00F93FEC /* ScanSceneView.swift in Sources */,
+				5299575925D9DBE10015842A /* ScannedPointCloud.swift in Sources */,
+				5299578825D9E4110015842A /* Utilities.swift in Sources */,
+				5299575825D9DBE10015842A /* ScannedObject.swift in Sources */,
 				5277394725D4D2E600F93FEC /* SceneDelegate.swift in Sources */,
+				5299575F25D9DBE10015842A /* ObjectOriginAxis.swift in Sources */,
+				529956EB25D9C7760015842A /* ScanSceneView.swift in Sources */,
 				527739AA25D5167F00F93FEC /* ScanState.swift in Sources */,
+				5299577125D9E0980015842A /* ThresholdPinchGestureRecognizer.swift in Sources */,
+				5299576425D9DBE10015842A /* ObjectOrigin.swift in Sources */,
+				529956F825D9C92A0015842A /* ObjectSearchRepository.swift in Sources */,
 				5277398B25D4D5A700F93FEC /* ScanRepository.swift in Sources */,
+				5299576225D9DBE10015842A /* BoundingBox.swift in Sources */,
+				5299576125D9DBE10015842A /* Wireframe.swift in Sources */,
+				5299570525D9C9630015842A /* ResizeObjectRepository.swift in Sources */,
+				5299575A25D9DBE10015842A /* DetectedPointCloud.swift in Sources */,
 				5277399025D4D5BE00F93FEC /* ScanController.swift in Sources */,
+				5299577025D9E0980015842A /* ThresholdRotationGestureRecognizer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
