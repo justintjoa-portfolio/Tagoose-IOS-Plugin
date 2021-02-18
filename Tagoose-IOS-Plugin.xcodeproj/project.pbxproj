@@ -168,8 +168,6 @@
 			children = (
 				5299577E25D9E3F90015842A /* Utilities */,
 				5299571525D9CCB40015842A /* Entities */,
-				5299571425D9CC990015842A /* New Group */,
-				5299570F25D9CAD60015842A /* Uncategorized */,
 				5277398125D4D35B00F93FEC /* Provider */,
 				5277398025D4D35200F93FEC /* Repository */,
 				5277397F25D4D34B00F93FEC /* Controller */,
@@ -294,20 +292,6 @@
 			children = (
 			);
 			path = ResizeObject;
-			sourceTree = "<group>";
-		};
-		5299570F25D9CAD60015842A /* Uncategorized */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Uncategorized;
-			sourceTree = "<group>";
-		};
-		5299571425D9CC990015842A /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 		5299571525D9CCB40015842A /* Entities */ = {

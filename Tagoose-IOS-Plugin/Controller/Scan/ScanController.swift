@@ -12,16 +12,30 @@ import RxSwift
 import RxCocoa
 
 
-class ScanController {
+class ScanController: UIViewController {
     
-    var _repository_Loader:() -> ScanRepository
+    var sceneView: ARSCNView?
     
-    lazy var _repository:ScanRepository = _repository_Loader()
-    
-    init(repositoryCreator: @escaping () -> ScanRepository) {
-        self._repository_Loader = repositoryCreator
+    init(sceneView:ARSCNView) {
+        self.sceneView = sceneView
+        super.init(nibName: nil, bundle: nil)
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.view.addSubview(sceneView!)
+        let config = ARObjectScanningConfiguration()
+        sceneView?.session.run(config, options: .resetTracking)
+
+    }
+    
+    required init?(coder aDecoder: NSCoder)
+        {
+            super.init(coder: aDecoder)
+        }
+    
+
+
 
  
 

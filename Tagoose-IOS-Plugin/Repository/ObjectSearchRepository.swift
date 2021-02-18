@@ -6,3 +6,13 @@
 //
 
 import Foundation
+import ARKit
+
+class ObjectSearchRepository {
+    
+    var sceneView: ARSCNView!
+    
+    
+    
+    
+}

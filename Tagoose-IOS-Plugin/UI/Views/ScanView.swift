@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import ARKit
+import RealityKit
 
 struct ScanView: View {
     var body: some View {
