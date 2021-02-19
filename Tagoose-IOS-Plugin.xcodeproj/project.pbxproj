@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		13EFC2E69CDF218D64D1C0D6 /* Pods_Tagoose_IOS_PluginTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8613D5B5D2D98626B8CBA05E /* Pods_Tagoose_IOS_PluginTests.framework */; };
 		29D25183C95E8DE9E23AA01E /* Pods_Tagoose_IOS_Plugin_Tagoose_IOS_PluginUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BF3067BE359657A9265712A /* Pods_Tagoose_IOS_Plugin_Tagoose_IOS_PluginUITests.framework */; };
+		5232B5CF25DFA3740004AFD1 /* Scanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5232B5CE25DFA3740004AFD1 /* Scanner.swift */; };
 		5277394525D4D2E600F93FEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5277394425D4D2E600F93FEC /* AppDelegate.swift */; };
 		5277394725D4D2E600F93FEC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5277394625D4D2E600F93FEC /* SceneDelegate.swift */; };
 		5277394B25D4D2E700F93FEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5277394A25D4D2E700F93FEC /* Assets.xcassets */; };
@@ -21,7 +22,6 @@
 		5277399025D4D5BE00F93FEC /* ScanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5277398F25D4D5BE00F93FEC /* ScanController.swift */; };
 		527739AA25D5167F00F93FEC /* ScanState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527739A925D5167F00F93FEC /* ScanState.swift */; };
 		527739AF25D5168800F93FEC /* ScanEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527739AE25D5168800F93FEC /* ScanEvent.swift */; };
-		529956EB25D9C7760015842A /* ScanSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529956EA25D9C7760015842A /* ScanSceneView.swift */; };
 		529956F825D9C92A0015842A /* ObjectSearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529956F725D9C92A0015842A /* ObjectSearchRepository.swift */; };
 		5299570525D9C9630015842A /* ResizeObjectRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5299570425D9C9630015842A /* ResizeObjectRepository.swift */; };
 		5299575825D9DBE10015842A /* ScannedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5299574B25D9DBE00015842A /* ScannedObject.swift */; };
@@ -65,6 +65,7 @@
 /* Begin PBXFileReference section */
 		2CBFE11A30BCF2276615B906 /* Pods-Tagoose-IOS-Plugin-Tagoose-IOS-PluginUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tagoose-IOS-Plugin-Tagoose-IOS-PluginUITests.debug.xcconfig"; path = "Target Support Files/Pods-Tagoose-IOS-Plugin-Tagoose-IOS-PluginUITests/Pods-Tagoose-IOS-Plugin-Tagoose-IOS-PluginUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3BF3067BE359657A9265712A /* Pods_Tagoose_IOS_Plugin_Tagoose_IOS_PluginUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tagoose_IOS_Plugin_Tagoose_IOS_PluginUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5232B5CE25DFA3740004AFD1 /* Scanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scanner.swift; sourceTree = "<group>"; };
 		5277394125D4D2E600F93FEC /* Tagoose-IOS-Plugin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tagoose-IOS-Plugin.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5277394425D4D2E600F93FEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5277394625D4D2E600F93FEC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,7 +84,6 @@
 		5277398F25D4D5BE00F93FEC /* ScanController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanController.swift; sourceTree = "<group>"; };
 		527739A925D5167F00F93FEC /* ScanState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanState.swift; sourceTree = "<group>"; };
 		527739AE25D5168800F93FEC /* ScanEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanEvent.swift; sourceTree = "<group>"; };
-		529956EA25D9C7760015842A /* ScanSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanSceneView.swift; sourceTree = "<group>"; };
 		529956F725D9C92A0015842A /* ObjectSearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectSearchRepository.swift; sourceTree = "<group>"; };
 		5299570425D9C9630015842A /* ResizeObjectRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizeObjectRepository.swift; sourceTree = "<group>"; };
 		5299574B25D9DBE00015842A /* ScannedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannedObject.swift; sourceTree = "<group>"; };
@@ -275,7 +275,7 @@
 		529956DE25D9C73F0015842A /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				529956EA25D9C7760015842A /* ScanSceneView.swift */,
+				5232B5CE25DFA3740004AFD1 /* Scanner.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -617,7 +617,6 @@
 				5299575825D9DBE10015842A /* ScannedObject.swift in Sources */,
 				5277394725D4D2E600F93FEC /* SceneDelegate.swift in Sources */,
 				5299575F25D9DBE10015842A /* ObjectOriginAxis.swift in Sources */,
-				529956EB25D9C7760015842A /* ScanSceneView.swift in Sources */,
 				527739AA25D5167F00F93FEC /* ScanState.swift in Sources */,
 				5299577125D9E0980015842A /* ThresholdPinchGestureRecognizer.swift in Sources */,
 				5299576425D9DBE10015842A /* ObjectOrigin.swift in Sources */,
@@ -628,6 +627,7 @@
 				5299570525D9C9630015842A /* ResizeObjectRepository.swift in Sources */,
 				5299575A25D9DBE10015842A /* DetectedPointCloud.swift in Sources */,
 				5277399025D4D5BE00F93FEC /* ScanController.swift in Sources */,
+				5232B5CF25DFA3740004AFD1 /* Scanner.swift in Sources */,
 				5299577025D9E0980015842A /* ThresholdRotationGestureRecognizer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
