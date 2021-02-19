@@ -9,33 +9,28 @@ import Foundation
 import ARKit
 
 
-class ScanSceneView: ARSCNView {
+class Scanner {
+    
+    var sceneView:ARSCNView
+    
+    init(sceneView:ARSCNView) {
+        self.sceneView = sceneView
+        let config = ARObjectScanningConfiguration()
+        sceneView.session.run(config, options: .resetTracking)
+        
+        let box:SCNNode = SCNNode(geometry: SCNBox(width: CGFloat(0.1), height: CGFloat(0.1), length: CGFloat(0.1), chamferRadius: CGFloat(0)))
+        box.geometry?.firstMaterial?.fillMode = .lines
+        box.geometry?.firstMaterial?.diffuse.contents = UIColor.green
+        sceneView.scene.rootNode.addChildNode(box)
+    }
+    
+
+
 
     
-    func doSomething(val configuration:ARWorldTrackingConfiguration) {
-        session.run(configuration)
-
-        
-    }
-    
-    required init?(coder: NSCoder) {
-            fatalError("init(coder:) has not been implemented")
-    }
-    
-    
-    /*
-    init(frame:CGRect) {
-        super.init(frame: frame)
-        
-    }
-    */
 
     
     
 }
 
-/*
- let configuration = ARObjectScanningConfiguration()
- configuration.planeDetection = .horizontal
- sceneView.session.run(configuration, options: .resetTracking)
-*/
+

@@ -14,18 +14,16 @@ import RxCocoa
 
 class ScanController: UIViewController {
     
-    var sceneView: ARSCNView?
+    var scanner:Scanner?
     
-    init(sceneView:ARSCNView) {
-        self.sceneView = sceneView
+    init(scanner:Scanner) {
+        self.scanner = scanner
         super.init(nibName: nil, bundle: nil)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.addSubview(sceneView!)
-        let config = ARObjectScanningConfiguration()
-        sceneView?.session.run(config, options: .resetTracking)
+        self.view.addSubview(scanner!.sceneView)
 
     }
     
