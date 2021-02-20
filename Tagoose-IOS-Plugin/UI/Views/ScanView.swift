@@ -10,18 +10,14 @@ import SwiftUI
 import ARKit
 import RealityKit
 
-struct ScanView: View {
-    var body: some View {
-        Text("Hello, world!")
-            .padding()
-    }
+
+class ScanView: UIView {
     
-}
-
-struct ScanView_Previews: PreviewProvider {
-    static var previews: some View {
-        ScanView()
+var body: some View {
+    ZStack {
+        Scanner()
+        ScanControls()
     }
 }
 
-
+}

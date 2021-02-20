@@ -15,28 +15,23 @@ import RxCocoa
 
 class ScanController: UIViewController {
     
-    
-    
-    
-    var scanner:Scanner?
-    
     var _repository:ScanRepository?
     
-    init(scanner:Scanner, _repository:ScanRepository) {
-        self.scanner = scanner
+    var _view:ScanView?
+    
+    init(_view:ScanView, _repository:ScanRepository) {
+        self._view = _view
         self._repository = _repository
         super.init(nibName: nil, bundle: nil)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.addSubview(scanner!.sceneView)
+        self.view.addSubview(_view!)
 
     }
     
-    func renderer(_ renderer: SCNSceneRenderer, willRenderScene scene: SCNScene, atTime time: TimeInterval, target:SCNNode) {
-        _repository?.renderer(target: target, renderer, willRenderScene: scene, atTime: time)(scanner!.sceneView)
-        }
+
     
     required init?(coder aDecoder: NSCoder)
         {
