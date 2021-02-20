@@ -29,14 +29,21 @@ class Scanner {
             "    discard_fragment(); \n" +
             "} \n"
         
-        let box = SCNBox(width: 0.1, height: 0.1, length: 0.1, chamferRadius: 0)
+        let box = SCNBox(width: 0.05, height: 0.05, length: 0.05, chamferRadius: 0)
 
         box.firstMaterial?.emission.contents = UIColor.green
 
         box.firstMaterial?.shaderModifiers = [SCNShaderModifierEntryPoint.surface: sm]
 
         box.firstMaterial?.isDoubleSided = true
-        sceneView.scene.rootNode.addChildNode(SCNNode(geometry: box))
+        
+        let shape = SCNNode(geometry: box)
+        
+        shape.position = SCNVector3Make(0, 0, -0.2)
+        
+        self.sceneView.pointOfView!.addChildNode(shape)
+        
+        //sceneView.scene.rootNode.addChildNode(SCNNode(geometry: box))
     }
     
 
