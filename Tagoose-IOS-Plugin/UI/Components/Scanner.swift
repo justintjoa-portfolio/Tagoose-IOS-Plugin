@@ -14,7 +14,10 @@ import RxSwift
 
 
 final class Scanner: UIViewRepresentable {
-    func makeUIView(context: Context) -> ARSCNView {
+
+    
+    
+    func makeUIView(context: Context) -> UIView {
         var result:ARSCNView?
         self.update(RequestARSCNView()).subscribe(
             onNext: { state in
@@ -23,7 +26,9 @@ final class Scanner: UIViewRepresentable {
                 
             }
         )
-        return result!
+        var newView = UIView(frame: UIScreen.main.bounds)
+        newView.addSubview(result!)
+        return newView
     }
     
     
@@ -37,11 +42,11 @@ final class Scanner: UIViewRepresentable {
     
     
     
-    func updateUIView(_ uiView: ARSCNView, context: Context) {
+    func updateUIView(_ uiView: UIView, context: Context) {
         print("no need to update!")
     }
 
-    typealias UIViewType = ARSCNView
+    typealias UIViewType = UIView
     
     
 
