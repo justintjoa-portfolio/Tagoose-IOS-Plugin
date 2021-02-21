@@ -10,15 +10,32 @@ import Foundation
 import ARKit
 import UIKit
 import SwiftUI
+import RxSwift
 
 
 class Scanner: UIViewRepresentable {
+    
+    var update: ((ScanEvent) -> (Observable<ScanState>))?
+    
+
+    
+    init(update: @escaping ((ScanEvent) -> (Observable<ScanState>))) {
+        self.update = update
+    }
+    
+    
+    
     func updateUIView(_ uiView: ARSCNView, context: Context) {
-        <#code#>
+        update(requestARSCNView).subscribe(
+            onNext: { state in
+                
+                
+            }
+        )
     }
     
     func makeUIView(context: Context) -> ARSCNView {
-        <#code#>
+        
     }
     
   

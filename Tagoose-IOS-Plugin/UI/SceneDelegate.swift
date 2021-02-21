@@ -25,9 +25,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Create the SwiftUI view that provides the window contents.
 
         // Use a UIHostingController as window root view controller.
+        
+        let sampleFunc = {
+            inputFunc in
+                ScanView(update: inputFunc)
+        }
+        
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = ScanController(_view: ScanView(), _repository: ScanRepository(sceneView: ARSCNView(frame: UIScreen.main.bounds)))
+            window.rootViewController = ScanController(_view: sampleFunc ,_repository: ScanRepository(sceneView: ARSCNView(frame: UIScreen.main.bounds)))
             self.window = window
             window.makeKeyAndVisible()
         }

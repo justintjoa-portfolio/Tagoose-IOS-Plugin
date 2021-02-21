@@ -18,7 +18,7 @@ class ScanRepository {
     init(sceneView:ARSCNView) {
         self.sceneView = sceneView
         let config = ARObjectScanningConfiguration()
-        sceneView.session.run(config, options: .resetTracking)
+        self.sceneView.session.run(config, options: .resetTracking)
         
         let sm = "float u = _surface.diffuseTexcoord.x; \n" +
             "float v = _surface.diffuseTexcoord.y; \n" +
@@ -42,7 +42,7 @@ class ScanRepository {
         
         shape.position = SCNVector3Make(0, 0, -0.2)
         
-        sceneView.pointOfView!.addChildNode(shape)
+        self.sceneView.pointOfView!.addChildNode(shape)
     }
     
     

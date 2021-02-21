@@ -7,9 +7,16 @@
 
 import Foundation
 import SwiftUI
-
+import RxSwift
 
 struct ScanControls: View {
+    
+    var update: ((ScanEvent) -> (Observable<ScanState>))
+    
+    init(update: @escaping ((ScanEvent) -> (Observable<ScanState>))) {
+        self.update = update
+    }
+    
     var body: some View {
             VStack {
                 Spacer()

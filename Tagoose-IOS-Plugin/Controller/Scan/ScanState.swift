@@ -21,6 +21,13 @@ class viewStartState: ScanState {
     
 }
 
+class ErrorState: ScanState {
+    var message:String
+    
+    init(message:String) {
+        self.message = message
+    }
+}
 
 
 

@@ -8,10 +8,10 @@
 import Foundation
 import ARKit
 
-class ScanEvent {
+protocol ScanEvent {
     
-   
 }
+
 
 class requestARSCNView: ScanEvent {
     

@@ -19,10 +19,11 @@ class ScanController: UIViewController {
     
     var _view:ScanView?
     
-    init(_view:ScanView, _repository:ScanRepository) {
-        self._view = _view
-        self._repository = _repository
+    init(_view: @escaping (@escaping (ScanEvent) -> (Observable<ScanState>)) -> (ScanView), _repository:ScanRepository) {
         super.init(nibName: nil, bundle: nil)
+        self._view = _view(self.update)
+        self._repository = _repository
+        
     }
     
     override func viewDidLoad() {
@@ -38,8 +39,21 @@ class ScanController: UIViewController {
             super.init(coder: aDecoder)
         }
     
-    func update(event:ScanEvent): ScanState {
+
         
+        
+        func update(event:ScanEvent) -> Observable<ScanState> {
+            return Observable.create { observer in
+                switch event {
+                    case is requestARSCNView:
+                        observer.on(.next(viewStartState(view: self._repository!.sceneView)))
+                    default:
+                        observer.on(.next(ErrorState(message: "Operation Failed")))
+                }
+                observer.on(.completed)
+                return Disposables.create()
+        }
+
         
         
     }

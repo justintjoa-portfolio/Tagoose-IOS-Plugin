@@ -9,16 +9,28 @@ import Foundation
 import SwiftUI
 import ARKit
 import RealityKit
-
+import RxSwift
 
 class ScanView: UIView {
     
+    var update: ((ScanEvent) -> (Observable<ScanState>))?
+    
     var body: some View {
         ZStack {
-            Scanner()
-            ScanControls()
+            Scanner(update: update!)
+            ScanControls(update: update!)
         }
     }
+    
+    init(update: @escaping  (ScanEvent) -> (Observable<ScanState>)) {
+        self.update = update
+        super.init(frame: UIScreen.main.bounds)
+    }
+    
+    required init?(coder aDecoder: NSCoder)
+        {
+            super.init(coder: aDecoder)
+        }
     
     
     
