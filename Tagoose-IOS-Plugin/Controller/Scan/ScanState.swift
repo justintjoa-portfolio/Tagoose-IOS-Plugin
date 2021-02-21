@@ -12,7 +12,7 @@ class ScanState {
     
 }
 
-class viewStartState: ScanState {
+class ViewStartState: ScanState {
     var view:ARSCNView
     
     init(view:ARSCNView) {

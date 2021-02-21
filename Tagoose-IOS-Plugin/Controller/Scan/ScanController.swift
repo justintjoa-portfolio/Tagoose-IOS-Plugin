@@ -46,7 +46,7 @@ class ScanController: UIViewController {
             return Observable.create { observer in
                 switch event {
                     case is requestARSCNView:
-                        observer.on(.next(viewStartState(view: self._repository!.sceneView)))
+                        observer.on(.next(ViewStartState(view: self._repository!.sceneView)))
                     default:
                         observer.on(.next(ErrorState(message: "Operation Failed")))
                 }
