@@ -11,6 +11,7 @@ import ARKit
 import Foundation
 import RxSwift
 import RxCocoa
+import SwiftUI
 
 
 class ScanController: UIViewController {
@@ -26,9 +27,16 @@ class ScanController: UIViewController {
         
     }
     
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.addSubview(_view!)
+        
+        let subController = UIHostingController(rootView: _view)
+        subController.view.translatesAutoresizingMaskIntoConstraints = false
+        subController.view.frame = UIScreen.main.bounds
+        //add the view of the child to the view of the parent
+        view.addSubview(subController.view)
 
     }
     

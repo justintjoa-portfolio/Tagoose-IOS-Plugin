@@ -23,18 +23,11 @@ final class ScanView: View {
     }
     
     init(update: @escaping  (ScanEvent) -> (Observable<ScanState>)) {
-        //super.init(frame: UIScreen.main.bounds)
+
         self.update = update
-        //self.addSubview(body as! UIView)
     }
     
-    /*
-    required init?(coder aDecoder: NSCoder)
-        {
-            super.init(coder: aDecoder)
-        }
-    
-    */
+
     
 
 
