@@ -11,7 +11,7 @@ import ARKit
 import RealityKit
 import RxSwift
 
-final class ScanView: View {
+struct ScanView: View {
     
     var update: ((ScanEvent) -> (Observable<ScanState>))?
     

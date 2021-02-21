@@ -25,7 +25,7 @@ struct ScanControls: View {
                     print("Hi!")
                 }) {
                     HStack {
-                        Text("Increment")
+                        Text("Scan")
                     }.padding(10.0)
                     .overlay(
                         RoundedRectangle(cornerRadius: 10.0)

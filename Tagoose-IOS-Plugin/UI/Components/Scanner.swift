@@ -13,7 +13,7 @@ import SwiftUI
 import RxSwift
 
 
-final class Scanner: UIViewRepresentable {
+struct Scanner: UIViewRepresentable {
 
     
     
