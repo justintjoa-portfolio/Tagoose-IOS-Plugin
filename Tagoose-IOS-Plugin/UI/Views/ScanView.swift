@@ -13,11 +13,15 @@ import RealityKit
 
 class ScanView: UIView {
     
-var body: some View {
-    ZStack {
-        Scanner()
-        ScanControls()
+    var body: some View {
+        ZStack {
+            Scanner()
+            ScanControls()
+        }
     }
-}
+    
+    
+    
+
 
 }

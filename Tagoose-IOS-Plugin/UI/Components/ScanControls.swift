@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 
-class ScanControls: UIView {
+struct ScanControls: View {
     var body: some View {
             VStack {
                 Spacer()

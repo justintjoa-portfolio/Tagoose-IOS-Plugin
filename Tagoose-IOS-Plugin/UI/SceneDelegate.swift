@@ -27,7 +27,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = ScanController(_repository: ScanRepository(sceneView: ARSCNView(frame: UIScreen.main.bounds)))
+            window.rootViewController = ScanController(_view: ScanView(), _repository: ScanRepository(sceneView: ARSCNView(frame: UIScreen.main.bounds)))
             self.window = window
             window.makeKeyAndVisible()
         }

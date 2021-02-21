@@ -38,6 +38,12 @@ class ScanController: UIViewController {
             super.init(coder: aDecoder)
         }
     
+    func update(event:ScanEvent): ScanState {
+        
+        
+        
+    }
+    
 
 
 

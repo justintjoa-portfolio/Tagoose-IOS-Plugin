@@ -12,14 +12,22 @@ import UIKit
 import SwiftUI
 
 
-class Scanner: UIView {
-    
-    
-    func setView() {
-        addSubview(view: nil)
+class Scanner: UIViewRepresentable {
+    func updateUIView(_ uiView: ARSCNView, context: Context) {
+        <#code#>
     }
     
+    func makeUIView(context: Context) -> ARSCNView {
+        <#code#>
+    }
     
+  
+    
+    typealias UIViewType = ARSCNView
+    
+    
+
+
 
     
 }
