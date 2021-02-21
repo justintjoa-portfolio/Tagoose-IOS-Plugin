@@ -11,38 +11,63 @@ import ARKit
 import Foundation
 import RxSwift
 import RxCocoa
+import SwiftUI
 
 
 class ScanController: UIViewController {
     
-    
-    
-    
-    var scanner:Scanner?
-    
     var _repository:ScanRepository?
     
-    init(scanner:Scanner, _repository:ScanRepository) {
-        self.scanner = scanner
-        self._repository = _repository
+    var _view:ScanView?
+    
+    init(_view: @escaping (@escaping (ScanEvent) -> (Observable<ScanState>)) -> (ScanView), _repository:ScanRepository) {
         super.init(nibName: nil, bundle: nil)
+        self._view = _view(self.update)
+        self._repository = _repository
+        
     }
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.addSubview(scanner!.sceneView)
+        
+        let subController = UIHostingController(rootView: _view)
+        subController.view.translatesAutoresizingMaskIntoConstraints = false
+        subController.view.frame = UIScreen.main.bounds
+        //add the view of the child to the view of the parent
+        view.addSubview(subController.view)
 
     }
     
-    func renderer(_ renderer: SCNSceneRenderer, willRenderScene scene: SCNScene, atTime time: TimeInterval, target:SCNNode) {
-        _repository?.renderer(target: target, renderer, willRenderScene: scene, atTime: time)(scanner!.sceneView)
-        }
+
     
     required init?(coder aDecoder: NSCoder)
         {
             super.init(coder: aDecoder)
         }
     
+
+        
+        
+        func update(event:ScanEvent) -> Observable<ScanState> {
+            return Observable.create { observer in
+                switch event {
+                    case is RequestARSCNView:
+                        observer.on(.next(ViewStartState(view: self._repository!.sceneView)))
+                    default:
+                        observer.on(.next(ErrorState(message: "Operation Failed")))
+                }
+                observer.on(.completed)
+                return Disposables.create()
+        }
+ 
+
+        
+        
+    }
+    
+
 
 
 

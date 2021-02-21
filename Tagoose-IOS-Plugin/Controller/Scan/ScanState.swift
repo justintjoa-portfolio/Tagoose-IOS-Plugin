@@ -6,18 +6,23 @@
 //
 
 import Foundation
+import ARKit
 
-
-class ScanState {
+protocol ScanState {
     
 }
 
-class Success: ScanState {
+class ViewStartState: ScanState {
+    var view:ARSCNView
+    
+    init(view:ARSCNView) {
+        self.view = view
+    }
     
 }
 
-class Failure: ScanState {
-    var message: String
+class ErrorState: ScanState {
+    var message:String
     
     init(message:String) {
         self.message = message

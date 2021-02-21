@@ -12,36 +12,39 @@ import SceneKit
 
 class ScanRepository {
     
-    func resolveVector (left: SCNVector3, right: SCNVector3) -> SCNVector3 {
-            return SCNVector3Make(left.x + right.x, left.y + right.y, left.z + right.z)
+
+    var sceneView:ARSCNView
+    
+    init(sceneView:ARSCNView) {
+        self.sceneView = sceneView
+        let config = ARObjectScanningConfiguration()
+        self.sceneView.session.run(config, options: .resetTracking)
+        
+        let sm = "float u = _surface.diffuseTexcoord.x; \n" +
+            "float v = _surface.diffuseTexcoord.y; \n" +
+            "int u100 = int(u * 100); \n" +
+            "int v100 = int(v * 100); \n" +
+            "if (u100 % 99 == 0 || v100 % 99 == 0) { \n" +
+            "  // do nothing \n" +
+            "} else { \n" +
+            "    discard_fragment(); \n" +
+            "} \n"
+        
+        let box = SCNBox(width: 0.05, height: 0.05, length: 0.05, chamferRadius: 0)
+
+        box.firstMaterial?.emission.contents = UIColor.green
+
+        box.firstMaterial?.shaderModifiers = [SCNShaderModifierEntryPoint.surface: sm]
+
+        box.firstMaterial?.isDoubleSided = true
+        
+        let shape = SCNNode(geometry: box)
+        
+        shape.position = SCNVector3Make(0, 0, -0.2)
+        
+        self.sceneView.pointOfView!.addChildNode(shape)
     }
     
-    func renderer(target:SCNNode, _ renderer: SCNSceneRenderer, willRenderScene scene: SCNScene, atTime time: TimeInterval) -> (ARSCNView) -> ()  {
-            // get camera translation and rotation
-        
-        return {
-            sceneView in
-                guard let pointOfView = sceneView.pointOfView else { return }
-                let transform = pointOfView.transform // transformation matrix
-                let orientation = SCNVector3(-transform.m31, -transform.m32, -transform.m33) // camera rotation
-                let location = SCNVector3(transform.m41, transform.m42, transform.m43) // camera translation
-
-            let currentPostionOfCamera = self.resolveVector(left: orientation, right: location)
-    //          SCNTransaction.begin()
- 
-                target.position = currentPostionOfCamera
-                
-    //          SCNTransaction.commit()
-        }
-        
-        
-            
-    }
-
- 
-
-
-
     
 
 

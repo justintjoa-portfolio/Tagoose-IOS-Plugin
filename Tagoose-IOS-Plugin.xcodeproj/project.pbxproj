@@ -10,6 +10,7 @@
 		13EFC2E69CDF218D64D1C0D6 /* Pods_Tagoose_IOS_PluginTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8613D5B5D2D98626B8CBA05E /* Pods_Tagoose_IOS_PluginTests.framework */; };
 		29D25183C95E8DE9E23AA01E /* Pods_Tagoose_IOS_Plugin_Tagoose_IOS_PluginUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BF3067BE359657A9265712A /* Pods_Tagoose_IOS_Plugin_Tagoose_IOS_PluginUITests.framework */; };
 		5232B5CF25DFA3740004AFD1 /* Scanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5232B5CE25DFA3740004AFD1 /* Scanner.swift */; };
+		5232B5E825E0F7680004AFD1 /* ScanControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5232B5E725E0F7680004AFD1 /* ScanControls.swift */; };
 		5277394525D4D2E600F93FEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5277394425D4D2E600F93FEC /* AppDelegate.swift */; };
 		5277394725D4D2E600F93FEC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5277394625D4D2E600F93FEC /* SceneDelegate.swift */; };
 		5277394B25D4D2E700F93FEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5277394A25D4D2E700F93FEC /* Assets.xcassets */; };
@@ -66,6 +67,7 @@
 		2CBFE11A30BCF2276615B906 /* Pods-Tagoose-IOS-Plugin-Tagoose-IOS-PluginUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tagoose-IOS-Plugin-Tagoose-IOS-PluginUITests.debug.xcconfig"; path = "Target Support Files/Pods-Tagoose-IOS-Plugin-Tagoose-IOS-PluginUITests/Pods-Tagoose-IOS-Plugin-Tagoose-IOS-PluginUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3BF3067BE359657A9265712A /* Pods_Tagoose_IOS_Plugin_Tagoose_IOS_PluginUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tagoose_IOS_Plugin_Tagoose_IOS_PluginUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5232B5CE25DFA3740004AFD1 /* Scanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scanner.swift; sourceTree = "<group>"; };
+		5232B5E725E0F7680004AFD1 /* ScanControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanControls.swift; sourceTree = "<group>"; };
 		5277394125D4D2E600F93FEC /* Tagoose-IOS-Plugin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tagoose-IOS-Plugin.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5277394425D4D2E600F93FEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5277394625D4D2E600F93FEC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				5232B5CE25DFA3740004AFD1 /* Scanner.swift */,
+				5232B5E725E0F7680004AFD1 /* ScanControls.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -602,6 +605,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5299577725D9E15C0015842A /* ModelProvider.swift in Sources */,
+				5232B5E825E0F7680004AFD1 /* ScanControls.swift in Sources */,
 				5277394525D4D2E600F93FEC /* AppDelegate.swift in Sources */,
 				5299575E25D9DBE10015842A /* Tile.swift in Sources */,
 				5299575D25D9DBE10015842A /* BoundingBoxSide.swift in Sources */,

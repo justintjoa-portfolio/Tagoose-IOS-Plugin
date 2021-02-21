@@ -9,19 +9,26 @@ import Foundation
 import SwiftUI
 import ARKit
 import RealityKit
+import RxSwift
 
 struct ScanView: View {
+    
+    var update: ((ScanEvent) -> (Observable<ScanState>))?
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        ZStack {
+            Scanner(update: update!)
+            ScanControls(update: update!)
+        }
     }
     
-}
+    init(update: @escaping  (ScanEvent) -> (Observable<ScanState>)) {
 
-struct ScanView_Previews: PreviewProvider {
-    static var previews: some View {
-        ScanView()
+        self.update = update
     }
+    
+
+    
+
+
 }
-
-

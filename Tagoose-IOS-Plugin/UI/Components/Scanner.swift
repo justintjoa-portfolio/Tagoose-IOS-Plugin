@@ -8,50 +8,55 @@
 import Foundation
 
 import ARKit
+import UIKit
+import SwiftUI
+import RxSwift
 
 
-class Scanner {
+struct Scanner: UIViewRepresentable {
+
     
-    var sceneView:ARSCNView
     
-    init(sceneView:ARSCNView) {
-        self.sceneView = sceneView
-        let config = ARObjectScanningConfiguration()
-        sceneView.session.run(config, options: .resetTracking)
-        
-        let sm = "float u = _surface.diffuseTexcoord.x; \n" +
-            "float v = _surface.diffuseTexcoord.y; \n" +
-            "int u100 = int(u * 100); \n" +
-            "int v100 = int(v * 100); \n" +
-            "if (u100 % 99 == 0 || v100 % 99 == 0) { \n" +
-            "  // do nothing \n" +
-            "} else { \n" +
-            "    discard_fragment(); \n" +
-            "} \n"
-        
-        let box = SCNBox(width: 0.05, height: 0.05, length: 0.05, chamferRadius: 0)
-
-        box.firstMaterial?.emission.contents = UIColor.green
-
-        box.firstMaterial?.shaderModifiers = [SCNShaderModifierEntryPoint.surface: sm]
-
-        box.firstMaterial?.isDoubleSided = true
-        
-        let shape = SCNNode(geometry: box)
-        
-        shape.position = SCNVector3Make(0, 0, -0.2)
-        
-        self.sceneView.pointOfView!.addChildNode(shape)
-        
-        //sceneView.scene.rootNode.addChildNode(SCNNode(geometry: box))
+    func makeUIView(context: Context) -> UIView {
+        var result:ARSCNView?
+        self.update(RequestARSCNView()).subscribe(
+            onNext: { state in
+                let viewState = state as! ViewStartState
+                result = viewState.view
+                
+            }
+        )
+        var newView = UIView(frame: UIScreen.main.bounds)
+        newView.addSubview(result!)
+        return newView
     }
     
-
-
-
+    
+    var update: (ScanEvent) -> Observable<ScanState>
     
 
     
+    init(update: @escaping ((ScanEvent) -> (Observable<ScanState>))) {
+        self.update = update
+    }
+    
+    
+    
+    func updateUIView(_ uiView: UIView, context: Context) {
+        print("no need to update!")
+    }
+
+    typealias UIViewType = UIView
+    
+    
+
+
+
     
 }
+
+
+
+
+
 
