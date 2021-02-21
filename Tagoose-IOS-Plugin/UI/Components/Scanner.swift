@@ -14,6 +14,18 @@ import RxSwift
 
 
 final class Scanner: UIViewRepresentable {
+    func makeUIView(context: Context) -> ARSCNView {
+        var result:ARSCNView?
+        self.update(RequestARSCNView()).subscribe(
+            onNext: { state in
+                let viewState = state as! ViewStartState
+                result = viewState.view
+                
+            }
+        )
+        return result!
+    }
+    
     
     var update: (ScanEvent) -> Observable<ScanState>
     
@@ -28,17 +40,7 @@ final class Scanner: UIViewRepresentable {
     func updateUIView(_ uiView: ARSCNView, context: Context) {
         print("no need to update!")
     }
-    
-    func makeUIView(context: Context) -> ARSCNView {
-        self.update(requestARSCNView()).subscribe(
-            onNext: { state in
-                let viewState = state as ViewStartState
-                return viewState.view
-                
-            }
-        )
-    }
-    
+
     typealias UIViewType = ARSCNView
     
     

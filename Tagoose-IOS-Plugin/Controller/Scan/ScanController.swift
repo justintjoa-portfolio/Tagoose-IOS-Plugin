@@ -45,7 +45,7 @@ class ScanController: UIViewController {
         func update(event:ScanEvent) -> Observable<ScanState> {
             return Observable.create { observer in
                 switch event {
-                    case is requestARSCNView:
+                    case is RequestARSCNView:
                         observer.on(.next(ViewStartState(view: self._repository!.sceneView)))
                     default:
                         observer.on(.next(ErrorState(message: "Operation Failed")))
@@ -53,11 +53,13 @@ class ScanController: UIViewController {
                 observer.on(.completed)
                 return Disposables.create()
         }
+ 
 
         
         
     }
     
+
 
 
 

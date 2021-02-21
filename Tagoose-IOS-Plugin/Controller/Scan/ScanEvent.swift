@@ -13,7 +13,7 @@ protocol ScanEvent {
 }
 
 
-class requestARSCNView: ScanEvent {
+class RequestARSCNView: ScanEvent {
     
 }
 
