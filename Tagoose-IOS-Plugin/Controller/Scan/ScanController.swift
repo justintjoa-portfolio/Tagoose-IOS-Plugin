@@ -55,6 +55,9 @@ class ScanController: UIViewController {
                 switch event {
                     case is RequestARSCNView:
                         observer.on(.next(ViewStartState(view: self._repository!.sceneView)))
+                    case is ToggleCube:
+                        observer.on(.next(ToggleCubeState(message: self._repository!.toggleState())))
+                    
                     default:
                         observer.on(.next(ErrorState(message: "Operation Failed")))
                 }

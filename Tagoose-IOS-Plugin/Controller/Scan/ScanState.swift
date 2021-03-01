@@ -21,7 +21,7 @@ class ViewStartState: ScanState {
     
 }
 
-class ErrorState: ScanState {
+class MessageState: ScanState {
     var message:String
     
     init(message:String) {
@@ -29,5 +29,11 @@ class ErrorState: ScanState {
     }
 }
 
+class ErrorState: MessageState {
 
+}
+
+class ToggleCubeState: MessageState {
+    
+}
 
