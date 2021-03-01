@@ -17,15 +17,23 @@ struct ScanControls: View {
         self.update = update
     }
     
+
+    @State var msg: String = "Scan"
+    
     var body: some View {
             VStack {
                 Spacer()
                 
                 Button(action: {
-                    print("Hi!")
+                    self.update((ToggleCube())).subscribe(
+                        onNext: { state in
+                            let newState = state as! ToggleCubeState
+                            msg = newState.message
+                        }
+                    )
                 }) {
                     HStack {
-                        Text("Scan")
+                        Text(msg)
                     }.padding(10.0)
                     .overlay(
                         RoundedRectangle(cornerRadius: 10.0)

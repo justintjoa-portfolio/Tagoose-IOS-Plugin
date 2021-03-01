@@ -17,4 +17,11 @@ class RequestARSCNView: ScanEvent {
     
 }
 
+class ToggleCube:ScanEvent {
+    
+}
+
+
+
+
 
