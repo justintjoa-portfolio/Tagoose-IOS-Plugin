@@ -17,6 +17,9 @@ class ScanRepository {
         case Searching
     }
     
+    var currentNode: SCNNode
+    
+    
     var currentState = State.Searching
     
     func toggleState() -> String {
@@ -40,18 +43,21 @@ class ScanRepository {
     var sceneView:ARSCNView
     
     func freeShape() {
-        self.sceneView.pointOfView!.enumerateChildNodes { (node, stop) in
-            node.removeFromParentNode() }
-        sceneView.scene.rootNode.addChildNode(getShape())
+        print("free")
+        currentNode.removeFromParentNode()
+        sceneView.scene.rootNode.addChildNode(currentNode)
     }
     
     func fixShape() {
-        self.sceneView.scene.rootNode.enumerateChildNodes { (node, stop) in
-            node.removeFromParentNode() }
-        self.sceneView.pointOfView!.addChildNode(getShape())
+        print("Fix")
+        currentNode.removeFromParentNode()
+        self.sceneView.pointOfView!.addChildNode(currentNode)
     }
     
-    func getShape() -> SCNNode {
+  
+    
+    init(sceneView:ARSCNView) {
+        self.sceneView = sceneView
         
         let sm = "float u = _surface.diffuseTexcoord.x; \n" +
             "float v = _surface.diffuseTexcoord.y; \n" +
@@ -76,16 +82,14 @@ class ScanRepository {
         
         shape.position = SCNVector3Make(0, 0, -0.2)
         
-        return shape
+        shape.name = "Box"
+        
+        self.currentNode = shape
         
         
-    }
-    
-    init(sceneView:ARSCNView) {
-        self.sceneView = sceneView
         let config = ARObjectScanningConfiguration()
         self.sceneView.session.run(config, options: .resetTracking)
-        self.sceneView.pointOfView!.addChildNode(getShape())
+        self.sceneView.pointOfView!.addChildNode(currentNode)
     }
     
     
