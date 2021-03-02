@@ -43,14 +43,23 @@ class ScanRepository {
     var sceneView:ARSCNView
     
     func freeShape() {
-        print("free")
         currentNode.removeFromParentNode()
+        print(sceneView.pointOfView!.position)
+        currentNode.position = plus(a: SCNVector3Make(0, 0, -0.2), b: sceneView.pointOfView!.position)
         sceneView.scene.rootNode.addChildNode(currentNode)
+        
+        
+        /*
+        print(sceneView.scene.rootNode.position)
+        print(sceneView.scene.rootNode.worldPosition)
+        print(sceneView.pointOfView!.position)
+        print(sceneView.pointOfView!.worldPosition)
+ */
     }
     
     func fixShape() {
-        print("Fix")
         currentNode.removeFromParentNode()
+        currentNode.position = SCNVector3Make(0, 0, -0.2)
         self.sceneView.pointOfView!.addChildNode(currentNode)
     }
     

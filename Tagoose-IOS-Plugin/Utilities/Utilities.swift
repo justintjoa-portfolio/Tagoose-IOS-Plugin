@@ -19,6 +19,10 @@ extension UIColor {
     static let appGray = UIColor.gray
 }
 
+func plus(a:SCNVector3, b: SCNVector3) -> SCNVector3 {
+    return SCNVector3Make(a.x + b.x, a.y + b.y, a.z + b.z)
+}
+
 enum Axis {
     case x
     case y
