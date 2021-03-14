@@ -20,6 +20,7 @@ class ScanRepository {
     var currentNode: SCNNode
     
     
+    
     var currentState = State.Searching
     
     func toggleState() -> String {
@@ -43,18 +44,13 @@ class ScanRepository {
     var sceneView:ARSCNView
     
     func freeShape() {
+        let prev = currentNode.worldPosition
         currentNode.removeFromParentNode()
-        print(sceneView.pointOfView!.position)
-        currentNode.position = plus(a: SCNVector3Make(0, 0, -0.2), b: sceneView.pointOfView!.position)
+        currentNode.position = prev
         sceneView.scene.rootNode.addChildNode(currentNode)
         
-        
-        /*
-        print(sceneView.scene.rootNode.position)
-        print(sceneView.scene.rootNode.worldPosition)
-        print(sceneView.pointOfView!.position)
-        print(sceneView.pointOfView!.worldPosition)
- */
+        print(currentNode.worldPosition)
+        print("HI")
     }
     
     func fixShape() {
@@ -94,11 +90,12 @@ class ScanRepository {
         shape.name = "Box"
         
         self.currentNode = shape
-        
+    
         
         let config = ARObjectScanningConfiguration()
         self.sceneView.session.run(config, options: .resetTracking)
         self.sceneView.pointOfView!.addChildNode(currentNode)
+        
     }
     
     
