@@ -26,8 +26,7 @@ class ScanRepository {
     // The node for visualizing the point cloud.
     private(set) var pointCloud: ScannedPointCloud
     
-    private var sceneView: ARSCNView
-    
+
     private var isBusyCreatingReferenceObject = false
     
     private(set) var screenshot = UIImage()
@@ -37,205 +36,28 @@ class ScanRepository {
     
     static let minFeatureCount = 100
     
-  
     
-    deinit {
-        self.scannedObject.removeFromParentNode()
-        self.pointCloud.removeFromParentNode()
+    
+    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval,
+                  center:CGPoint) {
+        guard let frame = sceneView.session.currentFrame else { return }
+        updateOnEveryFrame(frame, center:center)
+        //testRun?.updateOnEveryFrame()
     }
-    
-    @objc
-    private func applicationStateChanged(_ notification: Notification) {
-        guard let appState = notification.userInfo?[ViewController.appStateUserInfoKey] as? ViewController.State else { return }
-        switch appState {
-        case .scanning:
-            scannedObject.isHidden = false
-            pointCloud.isHidden = false
-        default:
-            scannedObject.isHidden = true
-            pointCloud.isHidden = true
-        }
-    }
-    
-    func didOneFingerPan(_ gesture: UIPanGestureRecognizer) {
-        if state == .ready {
-            state = .defineBoundingBox
+
+    func updateOnEveryFrame(_ frame: ARFrame, center:CGPoint) -> Bool {
+
+        if let points = frame.rawFeaturePoints {
+            // Automatically adjust the size of the bounding box.
+            self.scannedObject.fitOverPointCloud(points, center: center)
         }
         
-        if state == .defineBoundingBox || state == .scanning {
-            switch gesture.state {
-            case .possible:
-                break
-            case .began:
-                scannedObject.boundingBox?.startSidePlaneDrag(screenPos: gesture.location(in: sceneView))
-            case .changed:
-                scannedObject.boundingBox?.updateSidePlaneDrag(screenPos: gesture.location(in: sceneView))
-            case .failed, .cancelled, .ended:
-                scannedObject.boundingBox?.endSidePlaneDrag()
-            }
-        } else if state == .adjustingOrigin {
-            switch gesture.state {
-            case .possible:
-                break
-            case .began:
-                scannedObject.origin?.startAxisDrag(screenPos: gesture.location(in: sceneView))
-            case .changed:
-                scannedObject.origin?.updateAxisDrag(screenPos: gesture.location(in: sceneView))
-            case .failed, .cancelled, .ended:
-                scannedObject.origin?.endAxisDrag()
-            }
-        }
-    }
-    
-    func didTwoFingerPan(_ gesture: ThresholdPanGestureRecognizer) {
-        if state == .ready {
-            state = .defineBoundingBox
-        }
         
-        if state == .defineBoundingBox || state == .scanning {
-            switch gesture.state {
-            case .possible:
-                break
-            case .began:
-                if gesture.numberOfTouches == 2 {
-                    scannedObject.boundingBox?.startGroundPlaneDrag(screenPos: gesture.offsetLocation(in: sceneView))
-                }
-            case .changed where gesture.isThresholdExceeded:
-                if gesture.numberOfTouches == 2 {
-                    scannedObject.boundingBox?.updateGroundPlaneDrag(screenPos: gesture.offsetLocation(in: sceneView))
-                }
-            case .changed:
-                break
-            case .failed, .cancelled, .ended:
-                scannedObject.boundingBox?.endGroundPlaneDrag()
-            }
-        } else if state == .adjustingOrigin {
-            switch gesture.state {
-            case .possible:
-                break
-            case .began:
-                if gesture.numberOfTouches == 2 {
-                    scannedObject.origin?.startPlaneDrag(screenPos: gesture.offsetLocation(in: sceneView))
-                }
-            case .changed where gesture.isThresholdExceeded:
-                if gesture.numberOfTouches == 2 {
-                    scannedObject.origin?.updatePlaneDrag(screenPos: gesture.offsetLocation(in: sceneView))
-                }
-            case .changed:
-                break
-            case .failed, .cancelled, .ended:
-                scannedObject.origin?.endPlaneDrag()
-            }
-        }
-    }
-    
-    func didRotate(_ gesture: ThresholdRotationGestureRecognizer) {
-        if state == .ready {
-            state = .defineBoundingBox
-        }
-        
-        if state == .defineBoundingBox || state == .scanning {
-            if gesture.state == .changed {
-                scannedObject.rotateOnYAxis(by: -Float(gesture.rotationDelta))
-            }
-        } else if state == .adjustingOrigin {
-            if gesture.state == .changed {
-                scannedObject.origin?.rotateWithSnappingOnYAxis(by: -Float(gesture.rotationDelta))
-            }
-        }
-    }
-    
-    func didLongPress(_ gesture: UILongPressGestureRecognizer) {
-        if state == .ready {
-            state = .defineBoundingBox
-        }
-        
-        if state == .defineBoundingBox || state == .scanning {
-            switch gesture.state {
-            case .possible:
-                break
-            case .began:
-                scannedObject.boundingBox?.startSideDrag(screenPos: gesture.location(in: sceneView))
-            case .changed:
-                scannedObject.boundingBox?.updateSideDrag(screenPos: gesture.location(in: sceneView))
-            case .failed, .cancelled, .ended:
-                scannedObject.boundingBox?.endSideDrag()
-            }
-        } else if state == .adjustingOrigin {
-            switch gesture.state {
-            case .possible:
-                break
-            case .began:
-                scannedObject.origin?.startAxisDrag(screenPos: gesture.location(in: sceneView))
-            case .changed:
-                scannedObject.origin?.updateAxisDrag(screenPos: gesture.location(in: sceneView))
-            case .failed, .cancelled, .ended:
-                scannedObject.origin?.endAxisDrag()
-            }
-        }
-    }
-    
-    func didTap(_ gesture: UITapGestureRecognizer) {
-        if state == .ready {
-            state = .defineBoundingBox
-        }
-        
-        if state == .defineBoundingBox || state == .scanning {
-            if gesture.state == .ended {
-                scannedObject.createOrMoveBoundingBox(screenPos: gesture.location(in: sceneView))
-            }
-        } else if state == .adjustingOrigin {
-            if gesture.state == .ended {
-                scannedObject.origin?.flashOrReposition(screenPos: gesture.location(in: sceneView))
-            }
-        }
-    }
-    
-    func didPinch(_ gesture: ThresholdPinchGestureRecognizer) {
-        if state == .ready {
-            state = .defineBoundingBox
-        }
-        
-        if state == .defineBoundingBox || state == .scanning {
-            switch gesture.state {
-            case .possible, .began:
-                break
-            case .changed where gesture.isThresholdExceeded:
-                scannedObject.scaleBoundingBox(scale: gesture.scale)
-                gesture.scale = 1
-            case .changed:
-                break
-            case .failed, .cancelled, .ended:
-                break
-            }
-        } else if state == .adjustingOrigin {
-            switch gesture.state {
-            case .possible, .began:
-                break
-            case .changed where gesture.isThresholdExceeded:
-                scannedObject.origin?.updateScale(Float(gesture.scale))
-                gesture.scale = 1
-            case .changed, .failed, .cancelled, .ended:
-                break
-            }
-        }
-    }
-    
-    func updateOnEveryFrame(_ frame: ARFrame) {
-        if state == .ready || state == .defineBoundingBox {
-            if let points = frame.rawFeaturePoints {
-                // Automatically adjust the size of the bounding box.
-                self.scannedObject.fitOverPointCloud(points)
-            }
-        }
-        
-        if state == .ready || state == .defineBoundingBox || state == .scanning {
+
             
-            if let lightEstimate = frame.lightEstimate, lightEstimate.ambientIntensity < 500, !hasWarnedAboutLowLight, isFirstScan {
+            if let lightEstimate = frame.lightEstimate, lightEstimate.ambientIntensity < 500, !hasWarnedAboutLowLight{
                 hasWarnedAboutLowLight = true
-                let title = "Too dark for scanning"
-                let message = "Consider moving to an environment with more light."
-                ViewController.instance?.showAlert(title: title, message: message)
+                return false;
             }
             
             // Try a preliminary creation of the reference object based off the current
@@ -247,7 +69,7 @@ class ScanRepository {
                 //       enough time has passed and while we still wait for the
                 //       previous call to complete.
                 let now = CACurrentMediaTime()
-                if now - timeOfLastReferenceObjectCreation > Scan.objectCreationInterval, !isBusyCreatingReferenceObject {
+                if now - timeOfLastReferenceObjectCreation > ScanRepository.objectCreationInterval, !isBusyCreatingReferenceObject {
                     timeOfLastReferenceObjectCreation = now
                     isBusyCreatingReferenceObject = true
                     sceneView.session.createReferenceObject(transform: boundingBox.simdWorldTransform,
@@ -266,22 +88,23 @@ class ScanRepository {
                     pointCloud.update(with: currentPoints)
                 }
             }
-        }
+        
         
         // Update bounding box side coloring to visualize scanning coverage
-        if state == .scanning {
-            scannedObject.boundingBox?.highlightCurrentTile()
-            scannedObject.boundingBox?.updateCapturingProgress()
-        }
+
+        scannedObject.boundingBox?.highlightCurrentTile()
+        scannedObject.boundingBox?.updateCapturingProgress()
         
-        scannedObject.updateOnEveryFrame()
+        
+        scannedObject.updateOnEveryFrame(center: center)
         pointCloud.updateOnEveryFrame()
+        return true;
     }
     
     var timeOfLastReferenceObjectCreation = CACurrentMediaTime()
     
     var qualityIsLow: Bool {
-        return pointCloud.count < Scan.minFeatureCount
+        return pointCloud.count < ScanRepository.minFeatureCount
     }
     
     var boundingBoxExists: Bool {
@@ -327,43 +150,6 @@ class ScanRepository {
                     // Adjust the object's origin with the user-provided transform.
                     self.scannedReferenceObject = referenceObject.applyingTransform(origin.simdTransform)
                     self.scannedReferenceObject!.name = self.scannedObject.scanName
-                    
-                    if let referenceObjectToMerge = ViewController.instance?.referenceObjectToMerge {
-                        ViewController.instance?.referenceObjectToMerge = nil
-                        
-                        // Show activity indicator during the merge.
-                        ViewController.instance?.showAlert(title: "", message: "Merging previous scan into this scan...", buttonTitle: nil)
-                        
-                        // Try to merge the object which was just scanned with the existing one.
-                        self.scannedReferenceObject?.mergeInBackground(with: referenceObjectToMerge, completion: { (mergedObject, error) in
-
-                            if let mergedObject = mergedObject {
-                                self.scannedReferenceObject = mergedObject
-                                ViewController.instance?.showAlert(title: "Merge successful",
-                                                                   message: "The previous scan has been merged into this scan.", buttonTitle: "OK")
-                                creationFinished(self.scannedReferenceObject)
-
-                            } else {
-                                print("Error: Failed to merge scans. \(error?.localizedDescription ?? "")")
-                                let message = """
-                                        Merging the previous scan into this scan failed. Please make sure that
-                                        there is sufficient overlap between both scans and that the lighting
-                                        environment hasn't changed drastically.
-                                        Which scan do you want to use for testing?
-                                        """
-                                let thisScan = UIAlertAction(title: "Use This Scan", style: .default) { _ in
-                                    creationFinished(self.scannedReferenceObject)
-                                }
-                                let previousScan = UIAlertAction(title: "Use Previous Scan", style: .default) { _ in
-                                    self.scannedReferenceObject = referenceObjectToMerge
-                                    creationFinished(self.scannedReferenceObject)
-                                }
-                                ViewController.instance?.showAlert(title: "Merge failed", message: message, actions: [thisScan, previousScan])
-                            }
-                        })
-                    } else {
-                        creationFinished(self.scannedReferenceObject)
-                    }
                 } else {
                     print("Error: Failed to create reference object. \(error!.localizedDescription)")
                     creationFinished(nil)
@@ -441,6 +227,10 @@ class ScanRepository {
     }
     
     func fixShape() {
+        self.scannedObject.removeFromParentNode()
+        self.pointCloud.removeFromParentNode()
+        
+        
         currentNode.removeFromParentNode()
         currentNode.position = SCNVector3Make(0, 0, -0.2)
         self.sceneView.pointOfView!.addChildNode(currentNode)
