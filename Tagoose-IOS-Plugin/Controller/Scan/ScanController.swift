@@ -27,6 +27,8 @@ class ScanController: UIViewController {
         
     }
     
+    
+    
 
     
     override func viewDidLoad() {
