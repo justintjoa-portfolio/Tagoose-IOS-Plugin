@@ -25,14 +25,7 @@ class BoundingBox: SCNNode {
         }
     }
     
-    override var simdPosition: float3 {
-        willSet(newValue) {
-            if distance(newValue, simdPosition) > 0.001 {
-                NotificationCenter.default.post(name: BoundingBox.positionChangedNotification,
-                                                object: self)
-            }
-        }
-    }
+
     
     var hasBeenAdjustedByUser = false
     private var maxDistanceToFocusPoint: Float = 0.05
@@ -68,57 +61,15 @@ class BoundingBox: SCNNode {
     
     internal var isSnappedToHorizontalPlane = false
     
-    init(_ sceneView: ARSCNView) {
+    init(_ sceneView: ARSCNView, shape:SCNNode) {
         self.sceneView = sceneView
-        super.init()
+        self = shape
         
         updateVisualization()
     }
     
 
     
-    func fitOverPointCloud(_ pointCloud: ARPointCloud, focusPoint: float3?) {
-        var filteredPoints: [float3] = []
-        
-        for point in pointCloud.points {
-            if let focus = focusPoint {
-                // Skip this point if it is more than maxDistanceToFocusPoint meters away from the focus point.
-                let distanceToFocusPoint = length(point - focus)
-                if distanceToFocusPoint > maxDistanceToFocusPoint {
-                    continue
-                }
-            }
-            
-            // Skip this point if it is an outlier (not at least 3 other points closer than 3 cm)
-            var nearbyPoints = 0
-            for otherPoint in pointCloud.points {
-                if distance(point, otherPoint) < 0.03 {
-                    nearbyPoints += 1
-                    if nearbyPoints >= 3 {
-                        filteredPoints.append(point)
-                        break
-                    }
-                }
-            }
-        }
-        
-        guard !filteredPoints.isEmpty else { return }
-        
-        var localMin = -extent / 2
-        var localMax = extent / 2
-        
-        for point in filteredPoints {
-            // The bounding box is in local coordinates, so convert point to local, too.
-            let localPoint = self.simdConvertPosition(point, from: nil)
-            
-            localMin = min(localMin, localPoint)
-            localMax = max(localMax, localPoint)
-        }
-        
-        // Update the position & extent of the bounding box based on the new min & max values.
-        self.simdPosition += (localMax + localMin) / 2
-        self.extent = localMax - localMin
-    }
     
     private func updateVisualization() {
         self.updateSides()

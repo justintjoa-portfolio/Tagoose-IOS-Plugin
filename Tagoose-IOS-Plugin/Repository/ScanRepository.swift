@@ -16,15 +16,11 @@ class ScanRepository {
     static let objectCreationInterval: CFTimeInterval = 1.0
     
     
-    
-    // The object which we want to scan
-    private(set) var scannedObject: ScannedObject
+
     
     // The result of this scan, an ARReferenceObject
     private(set) var scannedReferenceObject: ARReferenceObject?
     
-    // The node for visualizing the point cloud.
-    private(set) var pointCloud: ScannedPointCloud
     
 
     private var isBusyCreatingReferenceObject = false
@@ -33,25 +29,21 @@ class ScanRepository {
     
     private var hasWarnedAboutLowLight = false
 
+    var boundingBox:BoundingBox
+    
     
     static let minFeatureCount = 100
     
     
     
-    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval,
-                  center:CGPoint) {
-        guard let frame = sceneView.session.currentFrame else { return }
-        updateOnEveryFrame(frame, center:center)
-        //testRun?.updateOnEveryFrame()
-    }
+    
+
+    
+    
 
     func updateOnEveryFrame(_ frame: ARFrame, center:CGPoint) -> Bool {
 
-        if let points = frame.rawFeaturePoints {
-            // Automatically adjust the size of the bounding box.
-            self.scannedObject.fitOverPointCloud(points, center: center)
-        }
-        
+     
         
 
             
@@ -62,7 +54,6 @@ class ScanRepository {
             
             // Try a preliminary creation of the reference object based off the current
             // bounding box & update the point cloud visualization based on that.
-            if let boundingBox = scannedObject.eitherBoundingBox {
                 // Note: Create a new preliminary reference object in regular intervals.
                 //       Creating the reference object is asynchronous and likely
                 //       takes some time to complete. Avoid calling it again before
@@ -75,45 +66,32 @@ class ScanRepository {
                     sceneView.session.createReferenceObject(transform: boundingBox.simdWorldTransform,
                                                             center: float3(),
                                                             extent: boundingBox.extent) { object, error in
-                        if let referenceObject = object {
-                            // Pass the feature points to the point cloud visualization.
-                            self.pointCloud.update(with: referenceObject.rawFeaturePoints, localFor: boundingBox)
-                        }
                         self.isBusyCreatingReferenceObject = false
                     }
                 }
                 
                 // Update the point cloud with the current frame's points as well
-                if let currentPoints = frame.rawFeaturePoints {
-                    pointCloud.update(with: currentPoints)
-                }
-            }
+
+            
         
         
         // Update bounding box side coloring to visualize scanning coverage
 
-        scannedObject.boundingBox?.highlightCurrentTile()
-        scannedObject.boundingBox?.updateCapturingProgress()
+        boundingBox.highlightCurrentTile()
+        boundingBox.updateCapturingProgress()
         
-        
-        scannedObject.updateOnEveryFrame(center: center)
-        pointCloud.updateOnEveryFrame()
         return true;
     }
     
     var timeOfLastReferenceObjectCreation = CACurrentMediaTime()
     
-    var qualityIsLow: Bool {
-        return pointCloud.count < ScanRepository.minFeatureCount
-    }
+
     
     var boundingBoxExists: Bool {
-        return scannedObject.boundingBox != nil
+        return boundingBox != nil
     }
     
-    var ghostBoundingBoxExists: Bool {
-        return scannedObject.ghostBoundingBox != nil
-    }
+
     
     var isReasonablySized: Bool {
         guard let boundingBox = scannedObject.boundingBox else {
@@ -222,13 +200,13 @@ class ScanRepository {
         currentNode.position = prev
         sceneView.scene.rootNode.addChildNode(currentNode)
         
+        boundingBox = currentNode;
+        
         print(currentNode.worldPosition)
         print("HI")
     }
     
     func fixShape() {
-        self.scannedObject.removeFromParentNode()
-        self.pointCloud.removeFromParentNode()
         
         
         currentNode.removeFromParentNode()
@@ -240,9 +218,9 @@ class ScanRepository {
     
     init(sceneView:ARSCNView) {
         self.sceneView = sceneView
+    
         
-        scannedObject = ScannedObject(sceneView)
-        pointCloud = ScannedPointCloud()
+        sceneView.isPlaying = true
         
         
         
@@ -280,8 +258,6 @@ class ScanRepository {
         self.sceneView.session.run(config, options: .resetTracking)
         self.sceneView.pointOfView!.addChildNode(currentNode)
         
-        self.sceneView.scene.rootNode.addChildNode(self.scannedObject)
-        self.sceneView.scene.rootNode.addChildNode(self.pointCloud)
         
     }
     

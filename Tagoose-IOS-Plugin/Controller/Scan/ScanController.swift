@@ -14,7 +14,7 @@ import RxCocoa
 import SwiftUI
 
 
-class ScanController: UIViewController {
+class ScanController: UIViewController, ARSCNViewDelegate {
     
     var _repository:ScanRepository?
     
@@ -24,12 +24,19 @@ class ScanController: UIViewController {
         super.init(nibName: nil, bundle: nil)
         self._view = _view(self.update)
         self._repository = _repository
-        
+        self._repository!.sceneView.delegate = self
+        self._repository!.sceneView.isPlaying = true;
     }
     
-    
-    
 
+    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval,
+                  center:CGPoint) {
+        print("Harrow")
+        guard let frame = _repository!.sceneView.session.currentFrame else { return }
+        _repository!.updateOnEveryFrame(frame, center:center)
+    
+        //testRun?.updateOnEveryFrame()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
